@@ -1,0 +1,80 @@
+{
+  "name": "devops",
+  "displayName": "DevOps Engineer",
+  "description": "Agents and skills for platform and DevOps teams — CI/CD, Kubernetes, infrastructure drift, rollback planning",
+  "rules": [],
+  "skills": [
+    {
+      "name": "ci-cd-best-practices",
+      "description": "Optimize CI/CD pipeline configuration for speed, reliability, and caching.",
+      "path": "plugins/devops/skills/ci-cd-best-practices/SKILL.md"
+    },
+    {
+      "name": "docs-upkeep",
+      "description": "Keep canonical documentation aligned with implementation and workflow changes in the same task.",
+      "path": "plugins/devops/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "infrastructure-drift-check",
+      "description": "Verify that declared infrastructure state matches deployed state before merging IaC changes.",
+      "path": "plugins/devops/skills/infrastructure-drift-check/SKILL.md"
+    },
+    {
+      "name": "rollback-plan",
+      "description": "Require an explicit rollback plan for every infrastructure or deployment change before merge.",
+      "path": "plugins/devops/skills/rollback-plan/SKILL.md"
+    },
+    {
+      "name": "security-audit",
+      "description": "Run a security audit checklist against code changes for secrets, injection, and dependency risks.",
+      "path": "plugins/devops/skills/security-audit/SKILL.md"
+    },
+    {
+      "name": "stack-change-review",
+      "description": "Review high-blast-radius infrastructure changes for safety before merge.",
+      "path": "plugins/devops/skills/stack-change-review/SKILL.md"
+    },
+    {
+      "name": "workspace-hygiene",
+      "description": "On-demand workspace audit — review change scope, clean temp artifacts, verify commit focus.",
+      "path": "plugins/devops/skills/workspace-hygiene/SKILL.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "ansible-specialist",
+      "description": "Writes and reviews Ansible roles, playbooks, and Jinja2 templates for idempotent infrastructure automation.",
+      "path": "plugins/devops/agents/ansible-specialist.md"
+    },
+    {
+      "name": "devops-specialist",
+      "description": "Manages CI/CD pipelines, container builds, infrastructure-as-code, and deployment config.",
+      "path": "plugins/devops/agents/devops-specialist.md"
+    },
+    {
+      "name": "docs-maintainer",
+      "description": "Keeps documentation aligned with code and workflow changes.",
+      "path": "plugins/devops/agents/docs-maintainer.md"
+    },
+    {
+      "name": "infrastructure-specialist",
+      "description": "Maintains build, CI, container, and deployment configuration.",
+      "path": "plugins/devops/agents/infrastructure-specialist.md"
+    },
+    {
+      "name": "kubernetes-specialist",
+      "description": "Writes and reviews Kubernetes manifests, Helm charts, and Kustomize overlays for secure, production-grade deployments.",
+      "path": "plugins/devops/agents/kubernetes-specialist.md"
+    },
+    {
+      "name": "security-specialist",
+      "description": "Audits code for security vulnerabilities, secrets exposure, and dependency risks.",
+      "path": "plugins/devops/agents/security-specialist.md"
+    },
+    {
+      "name": "sre-specialist",
+      "description": "Designs SLOs, alerts, on-call runbooks, and reliability improvements for production services.",
+      "path": "plugins/devops/agents/sre-specialist.md"
+    }
+  ]
+}

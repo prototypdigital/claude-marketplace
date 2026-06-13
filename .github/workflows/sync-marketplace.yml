@@ -1,0 +1,36 @@
+name: Sync marketplace
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'llm/**'
+      - 'bluetemberg.config.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install bluetemberg
+        run: npm install -g bluetemberg
+
+      - name: Sync marketplace plugins
+        run: bluetemberg sync
+
+      - name: Commit generated output
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: regenerate marketplace plugins [skip ci]'
+          file_pattern: 'plugins/** .claude-plugin/** .claude/settings.json'
+          commit_user_name: 'bluetemberg-bot'
+          commit_user_email: 'noreply@prototypdigital.com'

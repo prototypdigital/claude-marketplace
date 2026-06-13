@@ -1,0 +1,38 @@
+{
+  "platforms": ["claude-marketplace"],
+  "source": "llm",
+  "targets": {
+    "rules": {},
+    "agents": {},
+    "skills": {}
+  },
+  "marketplace": {
+    "remote": "prototypdigital/claude-marketplace",
+    "plugins": [
+      {
+        "name": "frontend",
+        "displayName": "Frontend Developer",
+        "description": "Agents and skills for frontend engineers — UI implementation, accessibility, React patterns, test automation",
+        "profiles": ["frontend"]
+      },
+      {
+        "name": "fullstack",
+        "displayName": "Full-Stack Developer",
+        "description": "Complete agent toolkit for full-stack teams — frontend, backend, API design, code review",
+        "profiles": ["frontend", "backend", "fullstack"]
+      },
+      {
+        "name": "backend",
+        "displayName": "Backend Developer",
+        "description": "Agents and skills for backend engineers — API design, database patterns, security, migration safety",
+        "profiles": ["backend"]
+      },
+      {
+        "name": "devops",
+        "displayName": "DevOps Engineer",
+        "description": "Agents and skills for platform and DevOps teams — CI/CD, Kubernetes, infrastructure drift, rollback planning",
+        "profiles": ["devops", "pure-infra"]
+      }
+    ]
+  }
+}

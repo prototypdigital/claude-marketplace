@@ -1,0 +1,25 @@
+{
+  "name": "claude-marketplace",
+  "plugins": [
+    {
+      "name": "frontend",
+      "description": "Agents and skills for frontend engineers — UI implementation, accessibility, React patterns, test automation",
+      "path": "plugins/frontend"
+    },
+    {
+      "name": "fullstack",
+      "description": "Complete agent toolkit for full-stack teams — frontend, backend, API design, code review",
+      "path": "plugins/fullstack"
+    },
+    {
+      "name": "backend",
+      "description": "Agents and skills for backend engineers — API design, database patterns, security, migration safety",
+      "path": "plugins/backend"
+    },
+    {
+      "name": "devops",
+      "description": "Agents and skills for platform and DevOps teams — CI/CD, Kubernetes, infrastructure drift, rollback planning",
+      "path": "plugins/devops"
+    }
+  ]
+}

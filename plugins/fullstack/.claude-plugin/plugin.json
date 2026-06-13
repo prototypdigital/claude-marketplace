@@ -1,0 +1,85 @@
+{
+  "name": "fullstack",
+  "displayName": "Full-Stack Developer",
+  "description": "Complete agent toolkit for full-stack teams — frontend, backend, API design, code review",
+  "rules": [],
+  "skills": [
+    {
+      "name": "api-design",
+      "description": "Apply RESTful API design conventions for endpoints, pagination, versioning, and error contracts.",
+      "path": "plugins/fullstack/skills/api-design/SKILL.md"
+    },
+    {
+      "name": "code-review",
+      "description": "Structured code review — intent-first, diff-focused, severity-tiered findings with actionable fix suggestions.",
+      "path": "plugins/fullstack/skills/code-review/SKILL.md"
+    },
+    {
+      "name": "docs-upkeep",
+      "description": "Keep canonical documentation aligned with implementation and workflow changes in the same task.",
+      "path": "plugins/fullstack/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "migration-safety",
+      "description": "Review database migrations for safety, rollback capability, and zero-downtime compatibility.",
+      "path": "plugins/fullstack/skills/migration-safety/SKILL.md"
+    },
+    {
+      "name": "patterns",
+      "description": "Apply reusable architecture and coding patterns from project standards when implementing features or reviewing structure.",
+      "path": "plugins/fullstack/skills/patterns/SKILL.md"
+    },
+    {
+      "name": "react-patterns",
+      "description": "Apply React component patterns — composition, co-location, and hook extraction — before reaching for custom solutions.",
+      "path": "plugins/fullstack/skills/react-patterns/SKILL.md"
+    },
+    {
+      "name": "security-audit",
+      "description": "Run a security audit checklist against code changes for secrets, injection, and dependency risks.",
+      "path": "plugins/fullstack/skills/security-audit/SKILL.md"
+    },
+    {
+      "name": "workspace-hygiene",
+      "description": "On-demand workspace audit — review change scope, clean temp artifacts, verify commit focus.",
+      "path": "plugins/fullstack/skills/workspace-hygiene/SKILL.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "a11y-specialist",
+      "description": "Audits and remediates accessibility issues against WCAG 2.2 A/AA standards.",
+      "path": "plugins/fullstack/agents/a11y-specialist.md"
+    },
+    {
+      "name": "backend-specialist",
+      "description": "Implements and reviews backend services, APIs, database patterns, and auth flows.",
+      "path": "plugins/fullstack/agents/backend-specialist.md"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Reviews pull requests for code quality, patterns, naming, and potential bugs.",
+      "path": "plugins/fullstack/agents/code-reviewer.md"
+    },
+    {
+      "name": "docs-maintainer",
+      "description": "Keeps documentation aligned with code and workflow changes.",
+      "path": "plugins/fullstack/agents/docs-maintainer.md"
+    },
+    {
+      "name": "frontend-specialist",
+      "description": "Implements and refactors frontend UI with reusable, accessible, and testable patterns.",
+      "path": "plugins/fullstack/agents/frontend-specialist.md"
+    },
+    {
+      "name": "security-specialist",
+      "description": "Audits code for security vulnerabilities, secrets exposure, and dependency risks.",
+      "path": "plugins/fullstack/agents/security-specialist.md"
+    },
+    {
+      "name": "test-specialist",
+      "description": "Creates, refactors, and stabilizes automated tests with deterministic patterns.",
+      "path": "plugins/fullstack/agents/test-specialist.md"
+    }
+  ]
+}
