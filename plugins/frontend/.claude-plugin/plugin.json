@@ -1,60 +1,316 @@
 {
   "name": "frontend",
   "displayName": "Frontend Developer",
-  "description": "Agents and skills for frontend engineers — UI implementation, accessibility, React patterns, test automation",
-  "rules": [],
+  "description": "Skills and agents for React/TypeScript frontend projects",
+  "rules": [
+    {
+      "name": "coding-standards",
+      "description": "Keep functions and components small, readable, and easy to reason about.",
+      "path": "plugins/frontend/rules/coding-standards.md"
+    },
+    {
+      "name": "design-system-reuse",
+      "description": "Reuse existing shared UI components and design tokens before creating new ones.",
+      "path": "plugins/frontend/rules/design-system-reuse.md"
+    },
+    {
+      "name": "early-returns",
+      "description": "Prefer early returns and guard clauses over nested conditionals.",
+      "path": "plugins/frontend/rules/early-returns.md"
+    },
+    {
+      "name": "no-console-log",
+      "description": "Forbid console.log in production code; use a logger instead.",
+      "path": "plugins/frontend/rules/no-console-log.md"
+    },
+    {
+      "name": "type-safety",
+      "description": "Enforce strict type safety — no implicit any, no unguarded assertions.",
+      "path": "plugins/frontend/rules/type-safety.md"
+    },
+    {
+      "name": "skeletor-animation",
+      "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
+      "path": "plugins/frontend/rules/skeletor-animation.md"
+    },
+    {
+      "name": "skeletor-context-defaults",
+      "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
+      "path": "plugins/frontend/rules/skeletor-context-defaults.md"
+    },
+    {
+      "name": "skeletor-spacing",
+      "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
+      "path": "plugins/frontend/rules/skeletor-spacing.md"
+    },
+    {
+      "name": "skeletor-structure",
+      "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
+      "path": "plugins/frontend/rules/skeletor-structure.md"
+    },
+    {
+      "name": "skeletor-style-props",
+      "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
+      "path": "plugins/frontend/rules/skeletor-style-props.md"
+    },
+    {
+      "name": "skeletor-types",
+      "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
+      "path": "plugins/frontend/rules/skeletor-types.md"
+    },
+    {
+      "name": "api-error-handling",
+      "description": "Use structured error responses and never leak internal details.",
+      "path": "plugins/frontend/rules/api-error-handling.md"
+    },
+    {
+      "name": "llm-package-hallucination",
+      "description": "Verify every LLM-suggested dependency exists in the registry before installing — hallucinated package names are a real supply-chain attack surface (slopsquatting).",
+      "path": "plugins/frontend/rules/llm-package-hallucination.md"
+    },
+    {
+      "name": "never-read-env",
+      "description": "Never read .env files directly in code.",
+      "path": "plugins/frontend/rules/never-read-env.md"
+    },
+    {
+      "name": "security-secrets",
+      "description": "Never hardcode secrets, tokens, or credentials in source code.",
+      "path": "plugins/frontend/rules/security-secrets.md"
+    },
+    {
+      "name": "coverage-meaningful-not-vanity",
+      "description": "Assert observable behavior and edge cases; never write tests that execute code without asserting anything",
+      "path": "plugins/frontend/rules/coverage-meaningful-not-vanity.md"
+    },
+    {
+      "name": "flaky-test-policy",
+      "description": "Quarantine-then-fix flaky tests; a retried test is a tracked bug, not a pass",
+      "path": "plugins/frontend/rules/flaky-test-policy.md"
+    },
+    {
+      "name": "mocking-boundaries",
+      "description": "Mock at I/O and network boundaries only; never mock the unit under test; prefer fakes over deep mock chains",
+      "path": "plugins/frontend/rules/mocking-boundaries.md"
+    },
+    {
+      "name": "test-data-builders",
+      "description": "Use factory or builder functions for test fixtures; never scatter inline object literals across the test suite",
+      "path": "plugins/frontend/rules/test-data-builders.md"
+    },
+    {
+      "name": "test-determinism",
+      "description": "Avoid timing-based, random, and wall-clock assertions; use fake timers and frozen clocks instead",
+      "path": "plugins/frontend/rules/test-determinism.md"
+    },
+    {
+      "name": "test-isolation",
+      "description": "Each test must set up and tear down its own state; never rely on execution order or shared mutable state",
+      "path": "plugins/frontend/rules/test-isolation.md"
+    },
+    {
+      "name": "test-naming",
+      "description": "Name tests as \"it does X when Y\" — describe the behavior under a condition, not the implementation",
+      "path": "plugins/frontend/rules/test-naming.md"
+    },
+    {
+      "name": "nextjs-data-fetching",
+      "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
+      "path": "plugins/frontend/rules/nextjs-data-fetching.md"
+    },
+    {
+      "name": "nextjs-image-optimization",
+      "description": "Always use next/image; never raw img tags",
+      "path": "plugins/frontend/rules/nextjs-image-optimization.md"
+    },
+    {
+      "name": "nextjs-metadata",
+      "description": "Define metadata/generateMetadata per page; never use <Head> in App Router",
+      "path": "plugins/frontend/rules/nextjs-metadata.md"
+    },
+    {
+      "name": "nextjs-public-env-vars",
+      "description": "NEXT_PUBLIC_* are inlined into the bundle at build time — never use for secrets or per-environment values.",
+      "path": "plugins/frontend/rules/nextjs-public-env-vars.md"
+    },
+    {
+      "name": "nextjs-server-components",
+      "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
+      "path": "plugins/frontend/rules/nextjs-server-components.md"
+    },
+    {
+      "name": "git-move",
+      "description": "Use git mv for tracked files to preserve history.",
+      "path": "plugins/frontend/rules/git-move.md"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Branch protection, branch naming, and PR workflow rules.",
+      "path": "plugins/frontend/rules/git-workflow.md"
+    },
+    {
+      "name": "pre-commit-checks",
+      "description": "Run formatter, linter, and build checks before every commit.",
+      "path": "plugins/frontend/rules/pre-commit-checks.md"
+    },
+    {
+      "name": "docs-parity",
+      "description": "Keep documentation in sync with every user-facing change.",
+      "path": "plugins/frontend/rules/docs-parity.md"
+    },
+    {
+      "name": "mermaid-diagrams",
+      "description": "Use Mermaid diagrams instead of ASCII art.",
+      "path": "plugins/frontend/rules/mermaid-diagrams.md"
+    },
+    {
+      "name": "post-edit-diagnostics",
+      "description": "Run diagnostics and formatter after editing code files.",
+      "path": "plugins/frontend/rules/post-edit-diagnostics.md"
+    },
+    {
+      "name": "accessible-forms",
+      "description": "Every form control must have a programmatic label, clear error identification, and grouped fields where appropriate",
+      "path": "plugins/frontend/rules/accessible-forms.md"
+    },
+    {
+      "name": "aria-only-when-needed",
+      "description": "ARIA is a fallback for when native HTML falls short — never add redundant or conflicting roles",
+      "path": "plugins/frontend/rules/aria-only-when-needed.md"
+    },
+    {
+      "name": "color-contrast",
+      "description": "Meet WCAG 2.2 AA contrast ratios; never use color as the only visual signal",
+      "path": "plugins/frontend/rules/color-contrast.md"
+    },
+    {
+      "name": "focus-management",
+      "description": "Provide visible focus indicators; move focus intentionally on route change and dialog open/close",
+      "path": "plugins/frontend/rules/focus-management.md"
+    },
+    {
+      "name": "keyboard-navigation",
+      "description": "All interactive elements must be reachable and operable by keyboard alone; no keyboard traps",
+      "path": "plugins/frontend/rules/keyboard-navigation.md"
+    },
+    {
+      "name": "reduced-motion",
+      "description": "Honor prefers-reduced-motion; never use motion as the sole affordance for a state change",
+      "path": "plugins/frontend/rules/reduced-motion.md"
+    },
+    {
+      "name": "semantic-html",
+      "description": "Prefer native HTML elements over div+role soup; semantic elements are accessible by default",
+      "path": "plugins/frontend/rules/semantic-html.md"
+    },
+    {
+      "name": "text-alternatives",
+      "description": "Provide descriptive alt text for meaningful images; empty alt for decorative; alternatives for icons and media",
+      "path": "plugins/frontend/rules/text-alternatives.md"
+    }
+  ],
   "skills": [
     {
-      "name": "code-review",
-      "description": "Structured code review — intent-first, diff-focused, severity-tiered findings with actionable fix suggestions.",
-      "path": "plugins/frontend/skills/code-review/SKILL.md"
+      "name": "workspace-hygiene",
+      "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",
+      "path": "plugins/frontend/skills/workspace-hygiene/SKILL.md"
     },
     {
-      "name": "docs-upkeep",
-      "description": "Keep canonical documentation aligned with implementation and workflow changes in the same task.",
-      "path": "plugins/frontend/skills/docs-upkeep/SKILL.md"
+      "name": "config-echo",
+      "description": "Verifies bluetemberg config (rules, agents, skills) is loaded in the session by recalling from context and cross-referencing disk. Use after `bluetemberg sync` or when a rule seems ignored.",
+      "path": "plugins/frontend/skills/config-echo/SKILL.md"
     },
     {
-      "name": "patterns",
-      "description": "Apply reusable architecture and coding patterns from project standards when implementing features or reviewing structure.",
-      "path": "plugins/frontend/skills/patterns/SKILL.md"
+      "name": "new-skeletor-hook",
+      "description": "Scaffold a skeletor use* animation hook — ref-stable via useRef(builder).current, built on RN Animated (never Reanimated), typed from Animation.ts. Use when adding a hook to the skeletor library.",
+      "path": "plugins/frontend/skills/new-skeletor-hook/SKILL.md"
+    },
+    {
+      "name": "new-skeletor-primitive",
+      "description": "Scaffold a skeletor primitive (Block/Text-shaped) — own folder, typed style-prop intersection, extract + memoizeStyle, displayName, index.ts barrel. Use when adding a skeletor component.",
+      "path": "plugins/frontend/skills/new-skeletor-primitive/SKILL.md"
     },
     {
       "name": "react-patterns",
-      "description": "Apply React component patterns — composition, co-location, and hook extraction — before reaching for custom solutions.",
+      "description": "Apply React composition, co-location, hook extraction, and state-placement patterns when writing or reviewing components, hooks, or state. Fixes prop drilling and logic tangled in JSX.",
       "path": "plugins/frontend/skills/react-patterns/SKILL.md"
     },
     {
-      "name": "workspace-hygiene",
-      "description": "On-demand workspace audit — review change scope, clean temp artifacts, verify commit focus.",
-      "path": "plugins/frontend/skills/workspace-hygiene/SKILL.md"
+      "name": "payload-cache-revalidation",
+      "description": "Standardizes Next.js + Payload cache revalidation — a cacheTags source of truth, per-locale vs locale-agnostic tags, hooks per cached collection. Use when editing unstable_cache or revalidation hooks.",
+      "path": "plugins/frontend/skills/payload-cache-revalidation/SKILL.md"
+    },
+    {
+      "name": "patterns",
+      "description": "Finds and reuses an existing codebase pattern instead of inventing new structure. Use when adding files or abstractions, reviewing folder structure, naming, or module boundaries, or refactoring.",
+      "path": "plugins/frontend/skills/patterns/SKILL.md"
+    },
+    {
+      "name": "docs-upkeep",
+      "description": "Updates affected docs in the same task as code or workflow changes — README, API docs, CLI --help, config, wiki. Use when renaming endpoints, adding flags/config, or fixing stale references.",
+      "path": "plugins/frontend/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "create-skill",
+      "description": "Scaffold a new bluetemberg skill to the deep-skill standard — Protocol, decision trees, BAD/GOOD examples, and a completion checklist.",
+      "path": "plugins/frontend/skills/create-skill/SKILL.md"
+    },
+    {
+      "name": "create-rule",
+      "description": "Scaffold a new bluetemberg rule in the correct format — frontmatter, a Why/Rules/BAD-GOOD/config/gotchas body, and sync.",
+      "path": "plugins/frontend/skills/create-rule/SKILL.md"
+    },
+    {
+      "name": "create-pack",
+      "description": "Scaffold a whole new bluetemberg pack — package.json metadata, llm/ layout, catalog registration, and validation.",
+      "path": "plugins/frontend/skills/create-pack/SKILL.md"
+    },
+    {
+      "name": "create-agent",
+      "description": "Scaffold a new bluetemberg agent in the correct format — frontmatter with scoped tools, responsibilities, constraints, and sync.",
+      "path": "plugins/frontend/skills/create-agent/SKILL.md"
+    },
+    {
+      "name": "code-review",
+      "description": "Reviews a pull request or code diff before merge — establishes intent, reviews changed lines, reports severity-tiered findings with fixes. Use for PR review or pre-PR self-review.",
+      "path": "plugins/frontend/skills/code-review/SKILL.md"
     }
   ],
   "agents": [
     {
-      "name": "a11y-specialist",
-      "description": "Audits and remediates accessibility issues against WCAG 2.2 A/AA standards.",
-      "path": "plugins/frontend/agents/a11y-specialist.md"
+      "name": "test-specialist",
+      "description": "Writes, refactors, and stabilizes unit/integration/e2e tests, fixes flaky/non-deterministic tests, applies fakes and data builders. Use proactively when adding tests or diagnosing flakiness.",
+      "path": "plugins/frontend/agents/test-specialist.md"
     },
     {
-      "name": "code-reviewer",
-      "description": "Reviews pull requests for code quality, patterns, naming, and potential bugs.",
-      "path": "plugins/frontend/agents/code-reviewer.md"
+      "name": "skeletor-specialist",
+      "description": "",
+      "path": "plugins/frontend/agents/skeletor-specialist.md"
     },
     {
-      "name": "docs-maintainer",
-      "description": "Keeps documentation aligned with code and workflow changes.",
-      "path": "plugins/frontend/agents/docs-maintainer.md"
+      "name": "payload-specialist",
+      "description": "Builds and reviews Payload CMS schemas — collections, globals, blocks, fields, hooks, access, Lexical, plugins, migrations, payload-types. Use proactively for payload.config work. Not generic APIs.",
+      "path": "plugins/frontend/agents/payload-specialist.md"
     },
     {
       "name": "frontend-specialist",
-      "description": "Implements and refactors frontend UI with reusable, accessible, and testable patterns.",
+      "description": "Implements and refactors React/Next.js UI — components, state, hooks, SSR/hydration, performance, accessibility. Use proactively when building or changing TSX/JSX UI, not for review or backend work.",
       "path": "plugins/frontend/agents/frontend-specialist.md"
     },
     {
-      "name": "test-specialist",
-      "description": "Creates, refactors, and stabilizes automated tests with deterministic patterns.",
-      "path": "plugins/frontend/agents/test-specialist.md"
+      "name": "docs-maintainer",
+      "description": "Updates and audits documentation (README, runbooks, API docs, Mermaid diagrams) to match code, config, and workflow changes. Use proactively after behavior, CLI, API, or schema changes.",
+      "path": "plugins/frontend/agents/docs-maintainer.md"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Reviews diffs and pull requests for correctness bugs, edge cases, naming, test coverage, and maintainability. Use proactively after code changes. For deep security audits route to security-specialist.",
+      "path": "plugins/frontend/agents/code-reviewer.md"
+    },
+    {
+      "name": "a11y-specialist",
+      "description": "Audits WCAG 2.2 A/AA accessibility — semantic HTML, keyboard, focus, contrast, alt text — and reports prioritized fixes. Use proactively for UI components, forms, dialogs, screen-reader review.",
+      "path": "plugins/frontend/agents/a11y-specialist.md"
     }
   ]
 }

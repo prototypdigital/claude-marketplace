@@ -1,0 +1,596 @@
+{
+  "name": "payload",
+  "displayName": "Payload CMS",
+  "description": "Rules, skills, and agents for Payload CMS projects",
+  "rules": [
+    {
+      "name": "coding-standards",
+      "description": "Keep functions and components small, readable, and easy to reason about.",
+      "path": "plugins/payload/rules/coding-standards.md"
+    },
+    {
+      "name": "design-system-reuse",
+      "description": "Reuse existing shared UI components and design tokens before creating new ones.",
+      "path": "plugins/payload/rules/design-system-reuse.md"
+    },
+    {
+      "name": "early-returns",
+      "description": "Prefer early returns and guard clauses over nested conditionals.",
+      "path": "plugins/payload/rules/early-returns.md"
+    },
+    {
+      "name": "no-console-log",
+      "description": "Forbid console.log in production code; use a logger instead.",
+      "path": "plugins/payload/rules/no-console-log.md"
+    },
+    {
+      "name": "type-safety",
+      "description": "Enforce strict type safety — no implicit any, no unguarded assertions.",
+      "path": "plugins/payload/rules/type-safety.md"
+    },
+    {
+      "name": "skeletor-animation",
+      "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
+      "path": "plugins/payload/rules/skeletor-animation.md"
+    },
+    {
+      "name": "skeletor-context-defaults",
+      "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
+      "path": "plugins/payload/rules/skeletor-context-defaults.md"
+    },
+    {
+      "name": "skeletor-spacing",
+      "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
+      "path": "plugins/payload/rules/skeletor-spacing.md"
+    },
+    {
+      "name": "skeletor-structure",
+      "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
+      "path": "plugins/payload/rules/skeletor-structure.md"
+    },
+    {
+      "name": "skeletor-style-props",
+      "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
+      "path": "plugins/payload/rules/skeletor-style-props.md"
+    },
+    {
+      "name": "skeletor-types",
+      "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
+      "path": "plugins/payload/rules/skeletor-types.md"
+    },
+    {
+      "name": "api-error-handling",
+      "description": "Use structured error responses and never leak internal details.",
+      "path": "plugins/payload/rules/api-error-handling.md"
+    },
+    {
+      "name": "llm-package-hallucination",
+      "description": "Verify every LLM-suggested dependency exists in the registry before installing — hallucinated package names are a real supply-chain attack surface (slopsquatting).",
+      "path": "plugins/payload/rules/llm-package-hallucination.md"
+    },
+    {
+      "name": "never-read-env",
+      "description": "Never read .env files directly in code.",
+      "path": "plugins/payload/rules/never-read-env.md"
+    },
+    {
+      "name": "security-secrets",
+      "description": "Never hardcode secrets, tokens, or credentials in source code.",
+      "path": "plugins/payload/rules/security-secrets.md"
+    },
+    {
+      "name": "coverage-meaningful-not-vanity",
+      "description": "Assert observable behavior and edge cases; never write tests that execute code without asserting anything",
+      "path": "plugins/payload/rules/coverage-meaningful-not-vanity.md"
+    },
+    {
+      "name": "flaky-test-policy",
+      "description": "Quarantine-then-fix flaky tests; a retried test is a tracked bug, not a pass",
+      "path": "plugins/payload/rules/flaky-test-policy.md"
+    },
+    {
+      "name": "mocking-boundaries",
+      "description": "Mock at I/O and network boundaries only; never mock the unit under test; prefer fakes over deep mock chains",
+      "path": "plugins/payload/rules/mocking-boundaries.md"
+    },
+    {
+      "name": "test-data-builders",
+      "description": "Use factory or builder functions for test fixtures; never scatter inline object literals across the test suite",
+      "path": "plugins/payload/rules/test-data-builders.md"
+    },
+    {
+      "name": "test-determinism",
+      "description": "Avoid timing-based, random, and wall-clock assertions; use fake timers and frozen clocks instead",
+      "path": "plugins/payload/rules/test-determinism.md"
+    },
+    {
+      "name": "test-isolation",
+      "description": "Each test must set up and tear down its own state; never rely on execution order or shared mutable state",
+      "path": "plugins/payload/rules/test-isolation.md"
+    },
+    {
+      "name": "test-naming",
+      "description": "Name tests as \"it does X when Y\" — describe the behavior under a condition, not the implementation",
+      "path": "plugins/payload/rules/test-naming.md"
+    },
+    {
+      "name": "payload-collection-structure",
+      "description": "Public Payload 3 collections follow a consistent shape — tracking fields, Content/SEO tabs, drafts with scheduled publish, and a slug field.",
+      "path": "plugins/payload/rules/payload-collection-structure.md"
+    },
+    {
+      "name": "payload-composable-access",
+      "description": "Build Payload access control from named role-checker functions composed with or()/and() — never inline role checks in collection config.",
+      "path": "plugins/payload/rules/payload-composable-access.md"
+    },
+    {
+      "name": "payload-dbname-snake-case",
+      "description": "Custom Payload `dbName` overrides must be snake_case — lowercase letters, digits, underscores only.",
+      "path": "plugins/payload/rules/payload-dbname-snake-case.md"
+    },
+    {
+      "name": "payload-field-builder-pattern",
+      "description": "Share Payload fields through builder functions that accept { overrides } and deep-merge onto a base config — never copy-paste field definitions.",
+      "path": "plugins/payload/rules/payload-field-builder-pattern.md"
+    },
+    {
+      "name": "payload-revalidation-hook-required",
+      "description": "Every Payload collection/global read on the front end needs afterChange/afterDelete revalidation hooks gated on context.disableRevalidate — no hook means a cache that silently never busts.",
+      "path": "plugins/payload/rules/payload-revalidation-hook-required.md"
+    },
+    {
+      "name": "nextjs-data-fetching",
+      "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
+      "path": "plugins/payload/rules/nextjs-data-fetching.md"
+    },
+    {
+      "name": "nextjs-image-optimization",
+      "description": "Always use next/image; never raw img tags",
+      "path": "plugins/payload/rules/nextjs-image-optimization.md"
+    },
+    {
+      "name": "nextjs-metadata",
+      "description": "Define metadata/generateMetadata per page; never use <Head> in App Router",
+      "path": "plugins/payload/rules/nextjs-metadata.md"
+    },
+    {
+      "name": "nextjs-public-env-vars",
+      "description": "NEXT_PUBLIC_* are inlined into the bundle at build time — never use for secrets or per-environment values.",
+      "path": "plugins/payload/rules/nextjs-public-env-vars.md"
+    },
+    {
+      "name": "nextjs-server-components",
+      "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
+      "path": "plugins/payload/rules/nextjs-server-components.md"
+    },
+    {
+      "name": "cost-accounting",
+      "description": "Measure LLM cost from the authoritative usage object and the provider's cost API — never from your own token estimates.",
+      "path": "plugins/payload/rules/cost-accounting.md"
+    },
+    {
+      "name": "model-selection-and-routing",
+      "description": "Pick models on the accuracy-vs-cost frontier and route easy queries to cheaper models — the most expensive model is rarely the right default.",
+      "path": "plugins/payload/rules/model-selection-and-routing.md"
+    },
+    {
+      "name": "streaming",
+      "description": "Stream for perceived latency, but buffer tool-call JSON until the block closes and don't gate safety on partial output.",
+      "path": "plugins/payload/rules/streaming.md"
+    },
+    {
+      "name": "i18n-payload-localized-fields",
+      "description": "In Payload, set localized:true only on display content; never on slugs, dbNames, relation IDs, or enums. Configure a fallbackLocale so empty translations degrade instead of rendering blank.",
+      "path": "plugins/payload/rules/i18n-payload-localized-fields.md"
+    },
+    {
+      "name": "git-move",
+      "description": "Use git mv for tracked files to preserve history.",
+      "path": "plugins/payload/rules/git-move.md"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Branch protection, branch naming, and PR workflow rules.",
+      "path": "plugins/payload/rules/git-workflow.md"
+    },
+    {
+      "name": "pre-commit-checks",
+      "description": "Run formatter, linter, and build checks before every commit.",
+      "path": "plugins/payload/rules/pre-commit-checks.md"
+    },
+    {
+      "name": "docs-parity",
+      "description": "Keep documentation in sync with every user-facing change.",
+      "path": "plugins/payload/rules/docs-parity.md"
+    },
+    {
+      "name": "mermaid-diagrams",
+      "description": "Use Mermaid diagrams instead of ASCII art.",
+      "path": "plugins/payload/rules/mermaid-diagrams.md"
+    },
+    {
+      "name": "post-edit-diagnostics",
+      "description": "Run diagnostics and formatter after editing code files.",
+      "path": "plugins/payload/rules/post-edit-diagnostics.md"
+    },
+    {
+      "name": "ansible-conventions",
+      "description": "Follow Ansible best practices for idempotent, maintainable infrastructure automation.",
+      "path": "plugins/payload/rules/ansible-conventions.md"
+    },
+    {
+      "name": "ci-workflow-conventions",
+      "description": "Secure CI/CD workflows with minimal permissions, pinned actions, and OIDC authentication.",
+      "path": "plugins/payload/rules/ci-workflow-conventions.md"
+    },
+    {
+      "name": "container-image-pinning",
+      "description": "Pin container image versions to prevent unexpected breaking changes.",
+      "path": "plugins/payload/rules/container-image-pinning.md"
+    },
+    {
+      "name": "docker-best-practices",
+      "description": "Follow container best practices for secure, efficient Docker images.",
+      "path": "plugins/payload/rules/docker-best-practices.md"
+    },
+    {
+      "name": "helm-conventions",
+      "description": "Write safe, reusable Helm charts with secure defaults and consistent values structure.",
+      "path": "plugins/payload/rules/helm-conventions.md"
+    },
+    {
+      "name": "idempotency",
+      "description": "Every operation — task, script, or deployment — must be safe to re-run without side effects.",
+      "path": "plugins/payload/rules/idempotency.md"
+    },
+    {
+      "name": "jinja2-templates",
+      "description": "Write safe, readable Jinja2 templates for Ansible and configuration generation.",
+      "path": "plugins/payload/rules/jinja2-templates.md"
+    },
+    {
+      "name": "kubernetes-manifests",
+      "description": "Write safe, production-grade Kubernetes manifests with resource limits, health checks, and security context.",
+      "path": "plugins/payload/rules/kubernetes-manifests.md"
+    },
+    {
+      "name": "runbook-discipline",
+      "description": "Keep operational runbooks and ADRs accurate and commit them alongside the changes they document.",
+      "path": "plugins/payload/rules/runbook-discipline.md"
+    },
+    {
+      "name": "shell-script-standards",
+      "description": "Write safe, portable shell scripts with error handling and clear control flow.",
+      "path": "plugins/payload/rules/shell-script-standards.md"
+    },
+    {
+      "name": "terraform-conventions",
+      "description": "Follow Terraform module structure and naming conventions.",
+      "path": "plugins/payload/rules/terraform-conventions.md"
+    },
+    {
+      "name": "anti-stock-defaults",
+      "description": "Decide the visual direction before prompting; AI averages toward stock UI, so name what you want and refuse the safe default.",
+      "path": "plugins/payload/rules/anti-stock-defaults.md"
+    },
+    {
+      "name": "banned-moves-first",
+      "description": "Keep a concrete banned-moves list and apply it to every UI build; closing off easy defaults forces something more intentional out.",
+      "path": "plugins/payload/rules/banned-moves-first.md"
+    },
+    {
+      "name": "design-every-state",
+      "description": "Design and build every screen state — empty, loading, error, success — with real content, never just the default with lorem ipsum.",
+      "path": "plugins/payload/rules/design-every-state.md"
+    },
+    {
+      "name": "references-not-moods",
+      "description": "Anchor visual direction to specific named references, not adjectives; concrete coordinates beat moods the model will average away.",
+      "path": "plugins/payload/rules/references-not-moods.md"
+    },
+    {
+      "name": "tokens-before-components",
+      "description": "Lock the visual system (palette, type, spacing) as tokens before building UI, and re-state them every refinement to prevent token drift.",
+      "path": "plugins/payload/rules/tokens-before-components.md"
+    },
+    {
+      "name": "context-pollution-prevention",
+      "description": "Prevent context pollution — scope tool calls to what you need, don't inject noise into the conversation.",
+      "path": "plugins/payload/rules/context-pollution-prevention.md"
+    },
+    {
+      "name": "context-positioning",
+      "description": "Place load-bearing content at the edges of the context, not the middle — models access the start and end far better than the middle.",
+      "path": "plugins/payload/rules/context-positioning.md"
+    },
+    {
+      "name": "context-window-budget",
+      "description": "Manage context window budget explicitly — prune stale content, compress retrieved data, never let context grow unbounded.",
+      "path": "plugins/payload/rules/context-window-budget.md"
+    },
+    {
+      "name": "multi-turn-context-hygiene",
+      "description": "Don't keep talking to a derailed conversation — consolidate the requirements and restart fresh. Multi-turn degradation is large and doesn't self-correct.",
+      "path": "plugins/payload/rules/multi-turn-context-hygiene.md"
+    },
+    {
+      "name": "multi-turn-state-management",
+      "description": "Manage state across multi-turn interactions — track what was decided, what changed, and what is still open.",
+      "path": "plugins/payload/rules/multi-turn-state-management.md"
+    },
+    {
+      "name": "prompt-structure",
+      "description": "Structure prompts into labeled, delimited sections — separate instructions from data, and keep persistent rules in the system message.",
+      "path": "plugins/payload/rules/prompt-structure.md"
+    },
+    {
+      "name": "memory-architecture-checklist",
+      "description": "Treat LLM statelessness as a hard constraint — decide explicitly what state survives a turn, which storage tier holds it, and how it is evicted.",
+      "path": "plugins/payload/rules/memory-architecture-checklist.md"
+    },
+    {
+      "name": "memory-promotion",
+      "description": "Session observations never write directly to durable memory — promotion runs through a reviewable consolidation step that dedupes, supersedes, and ratifies.",
+      "path": "plugins/payload/rules/memory-promotion.md"
+    },
+    {
+      "name": "memory-provenance",
+      "description": "Every durable memory carries provenance — source, time, confidence, and whether it was user-stated or agent-inferred. No silent writes.",
+      "path": "plugins/payload/rules/memory-provenance.md"
+    },
+    {
+      "name": "memory-recall-authority",
+      "description": "Rank recalled memory by authority, not only relevance — and never let stale, contradicted, or superseded memory present as a current constraint.",
+      "path": "plugins/payload/rules/memory-recall-authority.md"
+    },
+    {
+      "name": "accessible-forms",
+      "description": "Every form control must have a programmatic label, clear error identification, and grouped fields where appropriate",
+      "path": "plugins/payload/rules/accessible-forms.md"
+    },
+    {
+      "name": "aria-only-when-needed",
+      "description": "ARIA is a fallback for when native HTML falls short — never add redundant or conflicting roles",
+      "path": "plugins/payload/rules/aria-only-when-needed.md"
+    },
+    {
+      "name": "color-contrast",
+      "description": "Meet WCAG 2.2 AA contrast ratios; never use color as the only visual signal",
+      "path": "plugins/payload/rules/color-contrast.md"
+    },
+    {
+      "name": "focus-management",
+      "description": "Provide visible focus indicators; move focus intentionally on route change and dialog open/close",
+      "path": "plugins/payload/rules/focus-management.md"
+    },
+    {
+      "name": "keyboard-navigation",
+      "description": "All interactive elements must be reachable and operable by keyboard alone; no keyboard traps",
+      "path": "plugins/payload/rules/keyboard-navigation.md"
+    },
+    {
+      "name": "reduced-motion",
+      "description": "Honor prefers-reduced-motion; never use motion as the sole affordance for a state change",
+      "path": "plugins/payload/rules/reduced-motion.md"
+    },
+    {
+      "name": "semantic-html",
+      "description": "Prefer native HTML elements over div+role soup; semantic elements are accessible by default",
+      "path": "plugins/payload/rules/semantic-html.md"
+    },
+    {
+      "name": "text-alternatives",
+      "description": "Provide descriptive alt text for meaningful images; empty alt for decorative; alternatives for icons and media",
+      "path": "plugins/payload/rules/text-alternatives.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "workspace-hygiene",
+      "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",
+      "path": "plugins/payload/skills/workspace-hygiene/SKILL.md"
+    },
+    {
+      "name": "visual-direction",
+      "description": "Locks a visual direction before a UI build by exploring 3 options, picking one, writing a banned-moves list + Design System Document. Use when UI keeps coming out generic or before a handoff.",
+      "path": "plugins/payload/skills/visual-direction/SKILL.md"
+    },
+    {
+      "name": "sub-agent-design",
+      "description": "Design a multi-agent system — scope responsibilities, define typed input/output contracts, wire orchestration, add tests. Use when one agent is overloaded or work has parallelizable phases.",
+      "path": "plugins/payload/skills/sub-agent-design/SKILL.md"
+    },
+    {
+      "name": "config-echo",
+      "description": "Verifies bluetemberg config (rules, agents, skills) is loaded in the session by recalling from context and cross-referencing disk. Use after `bluetemberg sync` or when a rule seems ignored.",
+      "path": "plugins/payload/skills/config-echo/SKILL.md"
+    },
+    {
+      "name": "stack-change-review",
+      "description": "Reviews high-blast-radius infra diffs (docker-compose, Ansible group_vars, Terraform, k8s, .env) — port, volume, image, and env risks. Use when reviewing changes to deployed infrastructure.",
+      "path": "plugins/payload/skills/stack-change-review/SKILL.md"
+    },
+    {
+      "name": "new-skeletor-hook",
+      "description": "Scaffold a skeletor use* animation hook — ref-stable via useRef(builder).current, built on RN Animated (never Reanimated), typed from Animation.ts. Use when adding a hook to the skeletor library.",
+      "path": "plugins/payload/skills/new-skeletor-hook/SKILL.md"
+    },
+    {
+      "name": "new-skeletor-primitive",
+      "description": "Scaffold a skeletor primitive (Block/Text-shaped) — own folder, typed style-prop intersection, extract + memoizeStyle, displayName, index.ts barrel. Use when adding a skeletor component.",
+      "path": "plugins/payload/skills/new-skeletor-primitive/SKILL.md"
+    },
+    {
+      "name": "security-audit",
+      "description": "Triages code security findings by severity with detection steps for secrets, injection, auth, input, and dependency risks. Use when reviewing changes pre-deploy or touching auth, input, or uploads.",
+      "path": "plugins/payload/skills/security-audit/SKILL.md"
+    },
+    {
+      "name": "rollback-plan",
+      "description": "Require and validate a tested rollback plan before merging production deploy, Kubernetes/Terraform, schema-migration, or version-bump PRs. Adds a complexity tier tree, data-loss check, PR template.",
+      "path": "plugins/payload/skills/rollback-plan/SKILL.md"
+    },
+    {
+      "name": "react-patterns",
+      "description": "Apply React composition, co-location, hook extraction, and state-placement patterns when writing or reviewing components, hooks, or state. Fixes prop drilling and logic tangled in JSX.",
+      "path": "plugins/payload/skills/react-patterns/SKILL.md"
+    },
+    {
+      "name": "payload-cache-revalidation",
+      "description": "Standardizes Next.js + Payload cache revalidation — a cacheTags source of truth, per-locale vs locale-agnostic tags, hooks per cached collection. Use when editing unstable_cache or revalidation hooks.",
+      "path": "plugins/payload/skills/payload-cache-revalidation/SKILL.md"
+    },
+    {
+      "name": "patterns",
+      "description": "Finds and reuses an existing codebase pattern instead of inventing new structure. Use when adding files or abstractions, reviewing folder structure, naming, or module boundaries, or refactoring.",
+      "path": "plugins/payload/skills/patterns/SKILL.md"
+    },
+    {
+      "name": "migration-safety",
+      "description": "Reviews or writes database schema migrations against a zero-downtime checklist — destructive ops, lock analysis, batching, rollback path. Use when creating or reviewing a migration pre-deploy.",
+      "path": "plugins/payload/skills/migration-safety/SKILL.md"
+    },
+    {
+      "name": "k6-load-testing",
+      "description": "Standardizes k6 load tests — scenario taxonomy, shared config/requests libs, baseline-driven p95 thresholds, __ENV parametrization, and a CI smoke gate. Use when writing or editing k6 scripts.",
+      "path": "plugins/payload/skills/k6-load-testing/SKILL.md"
+    },
+    {
+      "name": "infrastructure-drift-check",
+      "description": "Detects infrastructure drift before merging IaC changes by diffing declared vs deployed state. Use when reviewing or merging Terraform .tf, Ansible, Kubernetes manifests, Helm, or Compose PRs.",
+      "path": "plugins/payload/skills/infrastructure-drift-check/SKILL.md"
+    },
+    {
+      "name": "figma-to-code",
+      "description": "Translates a Figma comp, screenshot, or mockup into working UI/HTML/CSS code section-by-section. Use when building UI from a design reference or when generated UI drifts from the comp.",
+      "path": "plugins/payload/skills/figma-to-code/SKILL.md"
+    },
+    {
+      "name": "docs-upkeep",
+      "description": "Updates affected docs in the same task as code or workflow changes — README, API docs, CLI --help, config, wiki. Use when renaming endpoints, adding flags/config, or fixing stale references.",
+      "path": "plugins/payload/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "design-critique",
+      "description": "Critiques built UI across accessibility, hierarchy, copy, consistency, and device lenses, runs hostile QA, and returns an impact-ranked fix list. Use before shipping a view or when it feels off.",
+      "path": "plugins/payload/skills/design-critique/SKILL.md"
+    },
+    {
+      "name": "create-skill",
+      "description": "Scaffold a new bluetemberg skill to the deep-skill standard — Protocol, decision trees, BAD/GOOD examples, and a completion checklist.",
+      "path": "plugins/payload/skills/create-skill/SKILL.md"
+    },
+    {
+      "name": "create-rule",
+      "description": "Scaffold a new bluetemberg rule in the correct format — frontmatter, a Why/Rules/BAD-GOOD/config/gotchas body, and sync.",
+      "path": "plugins/payload/skills/create-rule/SKILL.md"
+    },
+    {
+      "name": "create-pack",
+      "description": "Scaffold a whole new bluetemberg pack — package.json metadata, llm/ layout, catalog registration, and validation.",
+      "path": "plugins/payload/skills/create-pack/SKILL.md"
+    },
+    {
+      "name": "create-agent",
+      "description": "Scaffold a new bluetemberg agent in the correct format — frontmatter with scoped tools, responsibilities, constraints, and sync.",
+      "path": "plugins/payload/skills/create-agent/SKILL.md"
+    },
+    {
+      "name": "code-review",
+      "description": "Reviews a pull request or code diff before merge — establishes intent, reviews changed lines, reports severity-tiered findings with fixes. Use for PR review or pre-PR self-review.",
+      "path": "plugins/payload/skills/code-review/SKILL.md"
+    },
+    {
+      "name": "ci-cd-best-practices",
+      "description": "Audits CI/CD pipeline config (GitHub Actions, GitLab CI) for SHA pinning, dep caching, deploy gates, parallelism, OIDC. Use when adding or editing workflow files or fixing slow/flaky pipelines.",
+      "path": "plugins/payload/skills/ci-cd-best-practices/SKILL.md"
+    },
+    {
+      "name": "api-design",
+      "description": "Designs and reviews RESTful HTTP API endpoints — resource naming, pagination, error contracts, versioning. Use when creating an endpoint, reviewing an API contract, or vetting a breaking change.",
+      "path": "plugins/payload/skills/api-design/SKILL.md"
+    }
+  ],
+  "agents": [
+    {
+      "name": "test-specialist",
+      "description": "Writes, refactors, and stabilizes unit/integration/e2e tests, fixes flaky/non-deterministic tests, applies fakes and data builders. Use proactively when adding tests or diagnosing flakiness.",
+      "path": "plugins/payload/agents/test-specialist.md"
+    },
+    {
+      "name": "sre-specialist",
+      "description": "Reviews production reliability — SLOs, SLIs, error budgets, alerts, runbooks, post-mortems. Use proactively for on-call, observability, or incident-readiness review, not code or security audits.",
+      "path": "plugins/payload/agents/sre-specialist.md"
+    },
+    {
+      "name": "skeletor-specialist",
+      "description": "",
+      "path": "plugins/payload/agents/skeletor-specialist.md"
+    },
+    {
+      "name": "security-specialist",
+      "description": "Audits code for OWASP Top 10 vulns, injection, broken auth/access control, secrets exposure, and dependency/supply-chain CVEs. MUST BE USED for deep security review. Reports findings, does not edit.",
+      "path": "plugins/payload/agents/security-specialist.md"
+    },
+    {
+      "name": "payload-specialist",
+      "description": "Builds and reviews Payload CMS schemas — collections, globals, blocks, fields, hooks, access, Lexical, plugins, migrations, payload-types. Use proactively for payload.config work. Not generic APIs.",
+      "path": "plugins/payload/agents/payload-specialist.md"
+    },
+    {
+      "name": "kubernetes-specialist",
+      "description": "Writes and reviews Kubernetes manifests, Helm charts, Kustomize overlays — RBAC, probes, resources, security contexts, autoscaling, zero-downtime rollouts. Use proactively when editing k8s YAML.",
+      "path": "plugins/payload/agents/kubernetes-specialist.md"
+    },
+    {
+      "name": "infrastructure-specialist",
+      "description": "Maintains build tooling, Dockerfiles, Compose, and dependency manifests/lockfiles for reproducible, secure builds. Use proactively when editing Dockerfile, docker-compose, package.json, or lockfiles.",
+      "path": "plugins/payload/agents/infrastructure-specialist.md"
+    },
+    {
+      "name": "frontend-specialist",
+      "description": "Implements and refactors React/Next.js UI — components, state, hooks, SSR/hydration, performance, accessibility. Use proactively when building or changing TSX/JSX UI, not for review or backend work.",
+      "path": "plugins/payload/agents/frontend-specialist.md"
+    },
+    {
+      "name": "docs-maintainer",
+      "description": "Updates and audits documentation (README, runbooks, API docs, Mermaid diagrams) to match code, config, and workflow changes. Use proactively after behavior, CLI, API, or schema changes.",
+      "path": "plugins/payload/agents/docs-maintainer.md"
+    },
+    {
+      "name": "devops-specialist",
+      "description": "Designs and optimizes CI/CD pipelines, Docker images, Terraform IaC, deploy safety, and shell scripts. Use proactively when editing .github/workflows, Dockerfile, terraform/, or Makefile.",
+      "path": "plugins/payload/agents/devops-specialist.md"
+    },
+    {
+      "name": "design-engineer",
+      "description": "Builds UI from a Figma comp, screenshot, or visual direction section-by-section, holding design tokens and banned moves. Use when turning a design reference into distinct UI or catching stock drift.",
+      "path": "plugins/payload/agents/design-engineer.md"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Reviews diffs and pull requests for correctness bugs, edge cases, naming, test coverage, and maintainability. Use proactively after code changes. For deep security audits route to security-specialist.",
+      "path": "plugins/payload/agents/code-reviewer.md"
+    },
+    {
+      "name": "backend-specialist",
+      "description": "Builds server-side services — REST/GraphQL APIs, database access, auth flows (JWT, RBAC, OAuth/PKCE). Use proactively for API contracts, DB layers, or server auth. Not CMS schemas or security audits.",
+      "path": "plugins/payload/agents/backend-specialist.md"
+    },
+    {
+      "name": "ansible-specialist",
+      "description": "Writes, reviews, and lints Ansible roles, playbooks, and Jinja2 templates for idempotent infra automation. Use proactively when editing anything under roles/, playbooks, ansible.cfg, or inventory.",
+      "path": "plugins/payload/agents/ansible-specialist.md"
+    },
+    {
+      "name": "agentic-specialist",
+      "description": "Designs and implements agentic memory, state machines, sub-agent orchestration, and tool-use contracts. Use proactively when building agent loops, persistent memory, handoffs, or tool-call recovery.",
+      "path": "plugins/payload/agents/agentic-specialist.md"
+    },
+    {
+      "name": "a11y-specialist",
+      "description": "Audits WCAG 2.2 A/AA accessibility — semantic HTML, keyboard, focus, contrast, alt text — and reports prioritized fixes. Use proactively for UI components, forms, dialogs, screen-reader review.",
+      "path": "plugins/payload/agents/a11y-specialist.md"
+    }
+  ]
+}

@@ -1,25 +1,50 @@
 {
-  "name": "claude-marketplace",
+  "name": "bluetemberg-packs",
   "plugins": [
     {
       "name": "frontend",
-      "description": "Agents and skills for frontend engineers — UI implementation, accessibility, React patterns, test automation",
+      "description": "Skills and agents for React/TypeScript frontend projects",
       "path": "plugins/frontend"
     },
     {
       "name": "fullstack",
-      "description": "Complete agent toolkit for full-stack teams — frontend, backend, API design, code review",
+      "description": "Skills and agents for full-stack projects (frontend + backend)",
       "path": "plugins/fullstack"
     },
     {
       "name": "backend",
-      "description": "Agents and skills for backend engineers — API design, database patterns, security, migration safety",
+      "description": "Skills and agents for API, database, and service projects",
       "path": "plugins/backend"
     },
     {
       "name": "devops",
-      "description": "Agents and skills for platform and DevOps teams — CI/CD, Kubernetes, infrastructure drift, rollback planning",
+      "description": "Skills and agents for CI/CD, containers, and infrastructure",
       "path": "plugins/devops"
+    },
+    {
+      "name": "design-engineer",
+      "description": "Anti-stock UI craft — design-to-code, visual direction, and design critique",
+      "path": "plugins/design-engineer"
+    },
+    {
+      "name": "nextjs",
+      "description": "Rules and skills for Next.js App Router projects",
+      "path": "plugins/nextjs"
+    },
+    {
+      "name": "react",
+      "description": "Skills for React component and hook patterns",
+      "path": "plugins/react"
+    },
+    {
+      "name": "payload",
+      "description": "Rules, skills, and agents for Payload CMS projects",
+      "path": "plugins/payload"
+    },
+    {
+      "name": "skeletor",
+      "description": "Rules, skills, and an agent for contributing to the @prototyp/skeletor React Native library",
+      "path": "plugins/skeletor"
     }
   ]
 }

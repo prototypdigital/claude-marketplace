@@ -1,85 +1,361 @@
 {
   "name": "fullstack",
   "displayName": "Full-Stack Developer",
-  "description": "Complete agent toolkit for full-stack teams — frontend, backend, API design, code review",
-  "rules": [],
+  "description": "Skills and agents for full-stack projects (frontend + backend)",
+  "rules": [
+    {
+      "name": "coding-standards",
+      "description": "Keep functions and components small, readable, and easy to reason about.",
+      "path": "plugins/fullstack/rules/coding-standards.md"
+    },
+    {
+      "name": "design-system-reuse",
+      "description": "Reuse existing shared UI components and design tokens before creating new ones.",
+      "path": "plugins/fullstack/rules/design-system-reuse.md"
+    },
+    {
+      "name": "early-returns",
+      "description": "Prefer early returns and guard clauses over nested conditionals.",
+      "path": "plugins/fullstack/rules/early-returns.md"
+    },
+    {
+      "name": "no-console-log",
+      "description": "Forbid console.log in production code; use a logger instead.",
+      "path": "plugins/fullstack/rules/no-console-log.md"
+    },
+    {
+      "name": "type-safety",
+      "description": "Enforce strict type safety — no implicit any, no unguarded assertions.",
+      "path": "plugins/fullstack/rules/type-safety.md"
+    },
+    {
+      "name": "skeletor-animation",
+      "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
+      "path": "plugins/fullstack/rules/skeletor-animation.md"
+    },
+    {
+      "name": "skeletor-context-defaults",
+      "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
+      "path": "plugins/fullstack/rules/skeletor-context-defaults.md"
+    },
+    {
+      "name": "skeletor-spacing",
+      "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
+      "path": "plugins/fullstack/rules/skeletor-spacing.md"
+    },
+    {
+      "name": "skeletor-structure",
+      "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
+      "path": "plugins/fullstack/rules/skeletor-structure.md"
+    },
+    {
+      "name": "skeletor-style-props",
+      "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
+      "path": "plugins/fullstack/rules/skeletor-style-props.md"
+    },
+    {
+      "name": "skeletor-types",
+      "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
+      "path": "plugins/fullstack/rules/skeletor-types.md"
+    },
+    {
+      "name": "api-error-handling",
+      "description": "Use structured error responses and never leak internal details.",
+      "path": "plugins/fullstack/rules/api-error-handling.md"
+    },
+    {
+      "name": "llm-package-hallucination",
+      "description": "Verify every LLM-suggested dependency exists in the registry before installing — hallucinated package names are a real supply-chain attack surface (slopsquatting).",
+      "path": "plugins/fullstack/rules/llm-package-hallucination.md"
+    },
+    {
+      "name": "never-read-env",
+      "description": "Never read .env files directly in code.",
+      "path": "plugins/fullstack/rules/never-read-env.md"
+    },
+    {
+      "name": "security-secrets",
+      "description": "Never hardcode secrets, tokens, or credentials in source code.",
+      "path": "plugins/fullstack/rules/security-secrets.md"
+    },
+    {
+      "name": "coverage-meaningful-not-vanity",
+      "description": "Assert observable behavior and edge cases; never write tests that execute code without asserting anything",
+      "path": "plugins/fullstack/rules/coverage-meaningful-not-vanity.md"
+    },
+    {
+      "name": "flaky-test-policy",
+      "description": "Quarantine-then-fix flaky tests; a retried test is a tracked bug, not a pass",
+      "path": "plugins/fullstack/rules/flaky-test-policy.md"
+    },
+    {
+      "name": "mocking-boundaries",
+      "description": "Mock at I/O and network boundaries only; never mock the unit under test; prefer fakes over deep mock chains",
+      "path": "plugins/fullstack/rules/mocking-boundaries.md"
+    },
+    {
+      "name": "test-data-builders",
+      "description": "Use factory or builder functions for test fixtures; never scatter inline object literals across the test suite",
+      "path": "plugins/fullstack/rules/test-data-builders.md"
+    },
+    {
+      "name": "test-determinism",
+      "description": "Avoid timing-based, random, and wall-clock assertions; use fake timers and frozen clocks instead",
+      "path": "plugins/fullstack/rules/test-determinism.md"
+    },
+    {
+      "name": "test-isolation",
+      "description": "Each test must set up and tear down its own state; never rely on execution order or shared mutable state",
+      "path": "plugins/fullstack/rules/test-isolation.md"
+    },
+    {
+      "name": "test-naming",
+      "description": "Name tests as \"it does X when Y\" — describe the behavior under a condition, not the implementation",
+      "path": "plugins/fullstack/rules/test-naming.md"
+    },
+    {
+      "name": "nextjs-data-fetching",
+      "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
+      "path": "plugins/fullstack/rules/nextjs-data-fetching.md"
+    },
+    {
+      "name": "nextjs-image-optimization",
+      "description": "Always use next/image; never raw img tags",
+      "path": "plugins/fullstack/rules/nextjs-image-optimization.md"
+    },
+    {
+      "name": "nextjs-metadata",
+      "description": "Define metadata/generateMetadata per page; never use <Head> in App Router",
+      "path": "plugins/fullstack/rules/nextjs-metadata.md"
+    },
+    {
+      "name": "nextjs-public-env-vars",
+      "description": "NEXT_PUBLIC_* are inlined into the bundle at build time — never use for secrets or per-environment values.",
+      "path": "plugins/fullstack/rules/nextjs-public-env-vars.md"
+    },
+    {
+      "name": "nextjs-server-components",
+      "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
+      "path": "plugins/fullstack/rules/nextjs-server-components.md"
+    },
+    {
+      "name": "cost-accounting",
+      "description": "Measure LLM cost from the authoritative usage object and the provider's cost API — never from your own token estimates.",
+      "path": "plugins/fullstack/rules/cost-accounting.md"
+    },
+    {
+      "name": "model-selection-and-routing",
+      "description": "Pick models on the accuracy-vs-cost frontier and route easy queries to cheaper models — the most expensive model is rarely the right default.",
+      "path": "plugins/fullstack/rules/model-selection-and-routing.md"
+    },
+    {
+      "name": "streaming",
+      "description": "Stream for perceived latency, but buffer tool-call JSON until the block closes and don't gate safety on partial output.",
+      "path": "plugins/fullstack/rules/streaming.md"
+    },
+    {
+      "name": "git-move",
+      "description": "Use git mv for tracked files to preserve history.",
+      "path": "plugins/fullstack/rules/git-move.md"
+    },
+    {
+      "name": "git-workflow",
+      "description": "Branch protection, branch naming, and PR workflow rules.",
+      "path": "plugins/fullstack/rules/git-workflow.md"
+    },
+    {
+      "name": "pre-commit-checks",
+      "description": "Run formatter, linter, and build checks before every commit.",
+      "path": "plugins/fullstack/rules/pre-commit-checks.md"
+    },
+    {
+      "name": "docs-parity",
+      "description": "Keep documentation in sync with every user-facing change.",
+      "path": "plugins/fullstack/rules/docs-parity.md"
+    },
+    {
+      "name": "mermaid-diagrams",
+      "description": "Use Mermaid diagrams instead of ASCII art.",
+      "path": "plugins/fullstack/rules/mermaid-diagrams.md"
+    },
+    {
+      "name": "post-edit-diagnostics",
+      "description": "Run diagnostics and formatter after editing code files.",
+      "path": "plugins/fullstack/rules/post-edit-diagnostics.md"
+    },
+    {
+      "name": "accessible-forms",
+      "description": "Every form control must have a programmatic label, clear error identification, and grouped fields where appropriate",
+      "path": "plugins/fullstack/rules/accessible-forms.md"
+    },
+    {
+      "name": "aria-only-when-needed",
+      "description": "ARIA is a fallback for when native HTML falls short — never add redundant or conflicting roles",
+      "path": "plugins/fullstack/rules/aria-only-when-needed.md"
+    },
+    {
+      "name": "color-contrast",
+      "description": "Meet WCAG 2.2 AA contrast ratios; never use color as the only visual signal",
+      "path": "plugins/fullstack/rules/color-contrast.md"
+    },
+    {
+      "name": "focus-management",
+      "description": "Provide visible focus indicators; move focus intentionally on route change and dialog open/close",
+      "path": "plugins/fullstack/rules/focus-management.md"
+    },
+    {
+      "name": "keyboard-navigation",
+      "description": "All interactive elements must be reachable and operable by keyboard alone; no keyboard traps",
+      "path": "plugins/fullstack/rules/keyboard-navigation.md"
+    },
+    {
+      "name": "reduced-motion",
+      "description": "Honor prefers-reduced-motion; never use motion as the sole affordance for a state change",
+      "path": "plugins/fullstack/rules/reduced-motion.md"
+    },
+    {
+      "name": "semantic-html",
+      "description": "Prefer native HTML elements over div+role soup; semantic elements are accessible by default",
+      "path": "plugins/fullstack/rules/semantic-html.md"
+    },
+    {
+      "name": "text-alternatives",
+      "description": "Provide descriptive alt text for meaningful images; empty alt for decorative; alternatives for icons and media",
+      "path": "plugins/fullstack/rules/text-alternatives.md"
+    }
+  ],
   "skills": [
     {
-      "name": "api-design",
-      "description": "Apply RESTful API design conventions for endpoints, pagination, versioning, and error contracts.",
-      "path": "plugins/fullstack/skills/api-design/SKILL.md"
+      "name": "workspace-hygiene",
+      "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",
+      "path": "plugins/fullstack/skills/workspace-hygiene/SKILL.md"
     },
     {
-      "name": "code-review",
-      "description": "Structured code review — intent-first, diff-focused, severity-tiered findings with actionable fix suggestions.",
-      "path": "plugins/fullstack/skills/code-review/SKILL.md"
+      "name": "config-echo",
+      "description": "Verifies bluetemberg config (rules, agents, skills) is loaded in the session by recalling from context and cross-referencing disk. Use after `bluetemberg sync` or when a rule seems ignored.",
+      "path": "plugins/fullstack/skills/config-echo/SKILL.md"
     },
     {
-      "name": "docs-upkeep",
-      "description": "Keep canonical documentation aligned with implementation and workflow changes in the same task.",
-      "path": "plugins/fullstack/skills/docs-upkeep/SKILL.md"
+      "name": "new-skeletor-hook",
+      "description": "Scaffold a skeletor use* animation hook — ref-stable via useRef(builder).current, built on RN Animated (never Reanimated), typed from Animation.ts. Use when adding a hook to the skeletor library.",
+      "path": "plugins/fullstack/skills/new-skeletor-hook/SKILL.md"
     },
     {
-      "name": "migration-safety",
-      "description": "Review database migrations for safety, rollback capability, and zero-downtime compatibility.",
-      "path": "plugins/fullstack/skills/migration-safety/SKILL.md"
-    },
-    {
-      "name": "patterns",
-      "description": "Apply reusable architecture and coding patterns from project standards when implementing features or reviewing structure.",
-      "path": "plugins/fullstack/skills/patterns/SKILL.md"
-    },
-    {
-      "name": "react-patterns",
-      "description": "Apply React component patterns — composition, co-location, and hook extraction — before reaching for custom solutions.",
-      "path": "plugins/fullstack/skills/react-patterns/SKILL.md"
+      "name": "new-skeletor-primitive",
+      "description": "Scaffold a skeletor primitive (Block/Text-shaped) — own folder, typed style-prop intersection, extract + memoizeStyle, displayName, index.ts barrel. Use when adding a skeletor component.",
+      "path": "plugins/fullstack/skills/new-skeletor-primitive/SKILL.md"
     },
     {
       "name": "security-audit",
-      "description": "Run a security audit checklist against code changes for secrets, injection, and dependency risks.",
+      "description": "Triages code security findings by severity with detection steps for secrets, injection, auth, input, and dependency risks. Use when reviewing changes pre-deploy or touching auth, input, or uploads.",
       "path": "plugins/fullstack/skills/security-audit/SKILL.md"
     },
     {
-      "name": "workspace-hygiene",
-      "description": "On-demand workspace audit — review change scope, clean temp artifacts, verify commit focus.",
-      "path": "plugins/fullstack/skills/workspace-hygiene/SKILL.md"
+      "name": "react-patterns",
+      "description": "Apply React composition, co-location, hook extraction, and state-placement patterns when writing or reviewing components, hooks, or state. Fixes prop drilling and logic tangled in JSX.",
+      "path": "plugins/fullstack/skills/react-patterns/SKILL.md"
+    },
+    {
+      "name": "payload-cache-revalidation",
+      "description": "Standardizes Next.js + Payload cache revalidation — a cacheTags source of truth, per-locale vs locale-agnostic tags, hooks per cached collection. Use when editing unstable_cache or revalidation hooks.",
+      "path": "plugins/fullstack/skills/payload-cache-revalidation/SKILL.md"
+    },
+    {
+      "name": "patterns",
+      "description": "Finds and reuses an existing codebase pattern instead of inventing new structure. Use when adding files or abstractions, reviewing folder structure, naming, or module boundaries, or refactoring.",
+      "path": "plugins/fullstack/skills/patterns/SKILL.md"
+    },
+    {
+      "name": "migration-safety",
+      "description": "Reviews or writes database schema migrations against a zero-downtime checklist — destructive ops, lock analysis, batching, rollback path. Use when creating or reviewing a migration pre-deploy.",
+      "path": "plugins/fullstack/skills/migration-safety/SKILL.md"
+    },
+    {
+      "name": "k6-load-testing",
+      "description": "Standardizes k6 load tests — scenario taxonomy, shared config/requests libs, baseline-driven p95 thresholds, __ENV parametrization, and a CI smoke gate. Use when writing or editing k6 scripts.",
+      "path": "plugins/fullstack/skills/k6-load-testing/SKILL.md"
+    },
+    {
+      "name": "docs-upkeep",
+      "description": "Updates affected docs in the same task as code or workflow changes — README, API docs, CLI --help, config, wiki. Use when renaming endpoints, adding flags/config, or fixing stale references.",
+      "path": "plugins/fullstack/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "create-skill",
+      "description": "Scaffold a new bluetemberg skill to the deep-skill standard — Protocol, decision trees, BAD/GOOD examples, and a completion checklist.",
+      "path": "plugins/fullstack/skills/create-skill/SKILL.md"
+    },
+    {
+      "name": "create-rule",
+      "description": "Scaffold a new bluetemberg rule in the correct format — frontmatter, a Why/Rules/BAD-GOOD/config/gotchas body, and sync.",
+      "path": "plugins/fullstack/skills/create-rule/SKILL.md"
+    },
+    {
+      "name": "create-pack",
+      "description": "Scaffold a whole new bluetemberg pack — package.json metadata, llm/ layout, catalog registration, and validation.",
+      "path": "plugins/fullstack/skills/create-pack/SKILL.md"
+    },
+    {
+      "name": "create-agent",
+      "description": "Scaffold a new bluetemberg agent in the correct format — frontmatter with scoped tools, responsibilities, constraints, and sync.",
+      "path": "plugins/fullstack/skills/create-agent/SKILL.md"
+    },
+    {
+      "name": "code-review",
+      "description": "Reviews a pull request or code diff before merge — establishes intent, reviews changed lines, reports severity-tiered findings with fixes. Use for PR review or pre-PR self-review.",
+      "path": "plugins/fullstack/skills/code-review/SKILL.md"
+    },
+    {
+      "name": "api-design",
+      "description": "Designs and reviews RESTful HTTP API endpoints — resource naming, pagination, error contracts, versioning. Use when creating an endpoint, reviewing an API contract, or vetting a breaking change.",
+      "path": "plugins/fullstack/skills/api-design/SKILL.md"
     }
   ],
   "agents": [
     {
-      "name": "a11y-specialist",
-      "description": "Audits and remediates accessibility issues against WCAG 2.2 A/AA standards.",
-      "path": "plugins/fullstack/agents/a11y-specialist.md"
+      "name": "test-specialist",
+      "description": "Writes, refactors, and stabilizes unit/integration/e2e tests, fixes flaky/non-deterministic tests, applies fakes and data builders. Use proactively when adding tests or diagnosing flakiness.",
+      "path": "plugins/fullstack/agents/test-specialist.md"
     },
     {
-      "name": "backend-specialist",
-      "description": "Implements and reviews backend services, APIs, database patterns, and auth flows.",
-      "path": "plugins/fullstack/agents/backend-specialist.md"
-    },
-    {
-      "name": "code-reviewer",
-      "description": "Reviews pull requests for code quality, patterns, naming, and potential bugs.",
-      "path": "plugins/fullstack/agents/code-reviewer.md"
-    },
-    {
-      "name": "docs-maintainer",
-      "description": "Keeps documentation aligned with code and workflow changes.",
-      "path": "plugins/fullstack/agents/docs-maintainer.md"
-    },
-    {
-      "name": "frontend-specialist",
-      "description": "Implements and refactors frontend UI with reusable, accessible, and testable patterns.",
-      "path": "plugins/fullstack/agents/frontend-specialist.md"
+      "name": "skeletor-specialist",
+      "description": "",
+      "path": "plugins/fullstack/agents/skeletor-specialist.md"
     },
     {
       "name": "security-specialist",
-      "description": "Audits code for security vulnerabilities, secrets exposure, and dependency risks.",
+      "description": "Audits code for OWASP Top 10 vulns, injection, broken auth/access control, secrets exposure, and dependency/supply-chain CVEs. MUST BE USED for deep security review. Reports findings, does not edit.",
       "path": "plugins/fullstack/agents/security-specialist.md"
     },
     {
-      "name": "test-specialist",
-      "description": "Creates, refactors, and stabilizes automated tests with deterministic patterns.",
-      "path": "plugins/fullstack/agents/test-specialist.md"
+      "name": "payload-specialist",
+      "description": "Builds and reviews Payload CMS schemas — collections, globals, blocks, fields, hooks, access, Lexical, plugins, migrations, payload-types. Use proactively for payload.config work. Not generic APIs.",
+      "path": "plugins/fullstack/agents/payload-specialist.md"
+    },
+    {
+      "name": "frontend-specialist",
+      "description": "Implements and refactors React/Next.js UI — components, state, hooks, SSR/hydration, performance, accessibility. Use proactively when building or changing TSX/JSX UI, not for review or backend work.",
+      "path": "plugins/fullstack/agents/frontend-specialist.md"
+    },
+    {
+      "name": "docs-maintainer",
+      "description": "Updates and audits documentation (README, runbooks, API docs, Mermaid diagrams) to match code, config, and workflow changes. Use proactively after behavior, CLI, API, or schema changes.",
+      "path": "plugins/fullstack/agents/docs-maintainer.md"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Reviews diffs and pull requests for correctness bugs, edge cases, naming, test coverage, and maintainability. Use proactively after code changes. For deep security audits route to security-specialist.",
+      "path": "plugins/fullstack/agents/code-reviewer.md"
+    },
+    {
+      "name": "backend-specialist",
+      "description": "Builds server-side services — REST/GraphQL APIs, database access, auth flows (JWT, RBAC, OAuth/PKCE). Use proactively for API contracts, DB layers, or server auth. Not CMS schemas or security audits.",
+      "path": "plugins/fullstack/agents/backend-specialist.md"
+    },
+    {
+      "name": "a11y-specialist",
+      "description": "Audits WCAG 2.2 A/AA accessibility — semantic HTML, keyboard, focus, contrast, alt text — and reports prioritized fixes. Use proactively for UI components, forms, dialogs, screen-reader review.",
+      "path": "plugins/fullstack/agents/a11y-specialist.md"
     }
   ]
 }

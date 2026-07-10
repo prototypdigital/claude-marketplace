@@ -1,10 +1,6 @@
 ---
-profiles:
-  - frontend
-  - backend
-  - fullstack
 name: code-review
-description: Structured code review — intent-first, diff-focused, severity-tiered findings with actionable fix suggestions.
+description: Reviews a pull request or code diff before merge — establishes intent, reviews changed lines, reports severity-tiered findings with fixes. Use for PR review or pre-PR self-review.
 ---
 
 # code-review
@@ -57,6 +53,26 @@ Note: `issue`, `suggestion`, `nitpick`, and `praise` follow the Conventional Com
 - A PR adds an API endpoint without input validation → `issue(security): src/routes/upload.ts:34 — user-supplied filename passed to fs.writeFile with no sanitisation; path traversal can write to arbitrary paths`
 - A PR switches from `Promise.all` to sequential awaits in a loop → `warning(performance): src/jobs/sync.ts:88 — sequential awaits over N items degrades from O(1) to O(N) wait time; use Promise.all to restore concurrent execution`
 - A PR extracts a 60-line function into two focused helpers → `praise: src/sync/transform.ts:12-34 — splitting resolveProfiles into two helpers makes the branching logic easy to follow without scrolling`
+
+## Reviewing AI-generated code
+
+When the change under review was produced by an LLM (or an agent), add these checks — they target failure modes specific to generated code:
+
+- **Distrust green tests that were also generated.** A passing test written by the same model that wrote the code is not evidence of correctness — model-authored tests encode the model's *assumption* of intent, and a large share are invalid (one study found only ~44–59% of self-generated tests were valid). Confirm each test asserts the *intended* behavior before treating it as a signal; test-first generation only helps when the tests carry a real, externally-validated signal (e.g. human-confirmed examples), not when the model both writes and trusts its own tests.
+- **Scrutinize multi-turn diff edits for regressions.** Code produced as incremental diffs across several turns is more likely to be incorrect *and* insecure than code regenerated whole — security properties that held in an earlier turn can silently break in a later diff. On multi-turn AI edits, re-check the security-relevant behavior of the *current* full state, not just the latest diff, and prefer a whole-file regeneration when correctness or security is critical.
+- **Verify every new dependency exists.** Generated code may import hallucinated packages; confirm any added dependency is the real, intended package before approving (see the security pack's package-hallucination / slopsquatting rule).
+
+Sources: TiCoder (IEEE TSE 2024, <https://arxiv.org/abs/2404.10100>) and "Revisiting Self-Debugging" (<https://arxiv.org/abs/2501.12793>) for test-signal validity; MT-Sec (NeurIPS 2025, <https://arxiv.org/abs/2510.13859>) for diff-vs-whole-program correctness and security in multi-turn generation.
+
+## Completion checklist
+
+- [ ] Stated the PR intent in one sentence before reading any code.
+- [ ] Reviewed the diff (`git diff origin/main..HEAD`), not full files.
+- [ ] Every finding has a Conventional-Comments label, a `file:line` reference, and a concrete consequence.
+- [ ] Covered the categories in priority order: correctness, security, error handling, API contracts, performance, tests.
+- [ ] Wrote a summary that restates the intent, counts findings by severity, and gives a merge verdict.
+- [ ] Cited exactly one specific `praise` (file and line, not generic).
+- [ ] For AI-generated changes, ran the three extra checks: distrust self-generated tests, re-check current-state security on multi-turn edits, verify every new dependency exists.
 
 ## When NOT to use
 
