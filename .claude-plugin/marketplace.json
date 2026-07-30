@@ -1,5 +1,9 @@
 {
   "name": "bluetemberg-packs",
+  "owner": {
+    "name": "prototypdigital",
+    "url": "https://github.com/prototypdigital"
+  },
   "plugins": [
     {
       "name": "frontend",
