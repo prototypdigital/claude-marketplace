@@ -2,219 +2,217 @@
   "name": "devops",
   "displayName": "DevOps / Platform Engineer",
   "description": "Skills and agents for CI/CD, containers, and infrastructure",
-  "rules": [
+  "skills": [
     {
       "name": "skeletor-animation",
       "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
-      "path": "plugins/devops/rules/skeletor-animation.md"
+      "path": "plugins/devops/skills/rule-skeletor-animation/SKILL.md"
     },
     {
       "name": "skeletor-context-defaults",
       "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
-      "path": "plugins/devops/rules/skeletor-context-defaults.md"
+      "path": "plugins/devops/skills/rule-skeletor-context-defaults/SKILL.md"
     },
     {
       "name": "skeletor-spacing",
       "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
-      "path": "plugins/devops/rules/skeletor-spacing.md"
+      "path": "plugins/devops/skills/rule-skeletor-spacing/SKILL.md"
     },
     {
       "name": "skeletor-structure",
       "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
-      "path": "plugins/devops/rules/skeletor-structure.md"
+      "path": "plugins/devops/skills/rule-skeletor-structure/SKILL.md"
     },
     {
       "name": "skeletor-style-props",
       "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
-      "path": "plugins/devops/rules/skeletor-style-props.md"
+      "path": "plugins/devops/skills/rule-skeletor-style-props/SKILL.md"
     },
     {
       "name": "skeletor-types",
       "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
-      "path": "plugins/devops/rules/skeletor-types.md"
+      "path": "plugins/devops/skills/rule-skeletor-types/SKILL.md"
     },
     {
       "name": "api-error-handling",
       "description": "Use structured error responses and never leak internal details.",
-      "path": "plugins/devops/rules/api-error-handling.md"
+      "path": "plugins/devops/skills/rule-api-error-handling/SKILL.md"
     },
     {
       "name": "llm-package-hallucination",
       "description": "Verify every LLM-suggested dependency exists in the registry before installing — hallucinated package names are a real supply-chain attack surface (slopsquatting).",
-      "path": "plugins/devops/rules/llm-package-hallucination.md"
+      "path": "plugins/devops/skills/rule-llm-package-hallucination/SKILL.md"
     },
     {
       "name": "never-read-env",
       "description": "Never read .env files directly in code.",
-      "path": "plugins/devops/rules/never-read-env.md"
+      "path": "plugins/devops/skills/rule-never-read-env/SKILL.md"
     },
     {
       "name": "security-secrets",
       "description": "Never hardcode secrets, tokens, or credentials in source code.",
-      "path": "plugins/devops/rules/security-secrets.md"
+      "path": "plugins/devops/skills/rule-security-secrets/SKILL.md"
     },
     {
       "name": "coverage-meaningful-not-vanity",
       "description": "Assert observable behavior and edge cases; never write tests that execute code without asserting anything",
-      "path": "plugins/devops/rules/coverage-meaningful-not-vanity.md"
+      "path": "plugins/devops/skills/rule-coverage-meaningful-not-vanity/SKILL.md"
     },
     {
       "name": "flaky-test-policy",
       "description": "Quarantine-then-fix flaky tests; a retried test is a tracked bug, not a pass",
-      "path": "plugins/devops/rules/flaky-test-policy.md"
+      "path": "plugins/devops/skills/rule-flaky-test-policy/SKILL.md"
     },
     {
       "name": "mocking-boundaries",
       "description": "Mock at I/O and network boundaries only; never mock the unit under test; prefer fakes over deep mock chains",
-      "path": "plugins/devops/rules/mocking-boundaries.md"
+      "path": "plugins/devops/skills/rule-mocking-boundaries/SKILL.md"
     },
     {
       "name": "test-data-builders",
       "description": "Use factory or builder functions for test fixtures; never scatter inline object literals across the test suite",
-      "path": "plugins/devops/rules/test-data-builders.md"
+      "path": "plugins/devops/skills/rule-test-data-builders/SKILL.md"
     },
     {
       "name": "test-determinism",
       "description": "Avoid timing-based, random, and wall-clock assertions; use fake timers and frozen clocks instead",
-      "path": "plugins/devops/rules/test-determinism.md"
+      "path": "plugins/devops/skills/rule-test-determinism/SKILL.md"
     },
     {
       "name": "test-isolation",
       "description": "Each test must set up and tear down its own state; never rely on execution order or shared mutable state",
-      "path": "plugins/devops/rules/test-isolation.md"
+      "path": "plugins/devops/skills/rule-test-isolation/SKILL.md"
     },
     {
       "name": "test-naming",
       "description": "Name tests as \"it does X when Y\" — describe the behavior under a condition, not the implementation",
-      "path": "plugins/devops/rules/test-naming.md"
+      "path": "plugins/devops/skills/rule-test-naming/SKILL.md"
     },
     {
       "name": "git-move",
       "description": "Use git mv for tracked files to preserve history.",
-      "path": "plugins/devops/rules/git-move.md"
+      "path": "plugins/devops/skills/rule-git-move/SKILL.md"
     },
     {
       "name": "git-workflow",
       "description": "Branch protection, branch naming, and PR workflow rules.",
-      "path": "plugins/devops/rules/git-workflow.md"
+      "path": "plugins/devops/skills/rule-git-workflow/SKILL.md"
     },
     {
       "name": "pre-commit-checks",
       "description": "Run formatter, linter, and build checks before every commit.",
-      "path": "plugins/devops/rules/pre-commit-checks.md"
+      "path": "plugins/devops/skills/rule-pre-commit-checks/SKILL.md"
     },
     {
       "name": "docs-parity",
       "description": "Keep documentation in sync with every user-facing change.",
-      "path": "plugins/devops/rules/docs-parity.md"
+      "path": "plugins/devops/skills/rule-docs-parity/SKILL.md"
     },
     {
       "name": "mermaid-diagrams",
       "description": "Use Mermaid diagrams instead of ASCII art.",
-      "path": "plugins/devops/rules/mermaid-diagrams.md"
+      "path": "plugins/devops/skills/rule-mermaid-diagrams/SKILL.md"
     },
     {
       "name": "post-edit-diagnostics",
       "description": "Run diagnostics and formatter after editing code files.",
-      "path": "plugins/devops/rules/post-edit-diagnostics.md"
+      "path": "plugins/devops/skills/rule-post-edit-diagnostics/SKILL.md"
     },
     {
       "name": "ansible-conventions",
       "description": "Follow Ansible best practices for idempotent, maintainable infrastructure automation.",
-      "path": "plugins/devops/rules/ansible-conventions.md"
+      "path": "plugins/devops/skills/rule-ansible-conventions/SKILL.md"
     },
     {
       "name": "ci-workflow-conventions",
       "description": "Secure CI/CD workflows with minimal permissions, pinned actions, and OIDC authentication.",
-      "path": "plugins/devops/rules/ci-workflow-conventions.md"
+      "path": "plugins/devops/skills/rule-ci-workflow-conventions/SKILL.md"
     },
     {
       "name": "container-image-pinning",
       "description": "Pin container image versions to prevent unexpected breaking changes.",
-      "path": "plugins/devops/rules/container-image-pinning.md"
+      "path": "plugins/devops/skills/rule-container-image-pinning/SKILL.md"
     },
     {
       "name": "docker-best-practices",
       "description": "Follow container best practices for secure, efficient Docker images.",
-      "path": "plugins/devops/rules/docker-best-practices.md"
+      "path": "plugins/devops/skills/rule-docker-best-practices/SKILL.md"
     },
     {
       "name": "helm-conventions",
       "description": "Write safe, reusable Helm charts with secure defaults and consistent values structure.",
-      "path": "plugins/devops/rules/helm-conventions.md"
+      "path": "plugins/devops/skills/rule-helm-conventions/SKILL.md"
     },
     {
       "name": "idempotency",
       "description": "Every operation — task, script, or deployment — must be safe to re-run without side effects.",
-      "path": "plugins/devops/rules/idempotency.md"
+      "path": "plugins/devops/skills/rule-idempotency/SKILL.md"
     },
     {
       "name": "jinja2-templates",
       "description": "Write safe, readable Jinja2 templates for Ansible and configuration generation.",
-      "path": "plugins/devops/rules/jinja2-templates.md"
+      "path": "plugins/devops/skills/rule-jinja2-templates/SKILL.md"
     },
     {
       "name": "kubernetes-manifests",
       "description": "Write safe, production-grade Kubernetes manifests with resource limits, health checks, and security context.",
-      "path": "plugins/devops/rules/kubernetes-manifests.md"
+      "path": "plugins/devops/skills/rule-kubernetes-manifests/SKILL.md"
     },
     {
       "name": "runbook-discipline",
       "description": "Keep operational runbooks and ADRs accurate and commit them alongside the changes they document.",
-      "path": "plugins/devops/rules/runbook-discipline.md"
+      "path": "plugins/devops/skills/rule-runbook-discipline/SKILL.md"
     },
     {
       "name": "shell-script-standards",
       "description": "Write safe, portable shell scripts with error handling and clear control flow.",
-      "path": "plugins/devops/rules/shell-script-standards.md"
+      "path": "plugins/devops/skills/rule-shell-script-standards/SKILL.md"
     },
     {
       "name": "terraform-conventions",
       "description": "Follow Terraform module structure and naming conventions.",
-      "path": "plugins/devops/rules/terraform-conventions.md"
+      "path": "plugins/devops/skills/rule-terraform-conventions/SKILL.md"
     },
     {
       "name": "accessible-forms",
       "description": "Every form control must have a programmatic label, clear error identification, and grouped fields where appropriate",
-      "path": "plugins/devops/rules/accessible-forms.md"
+      "path": "plugins/devops/skills/rule-accessible-forms/SKILL.md"
     },
     {
       "name": "aria-only-when-needed",
       "description": "ARIA is a fallback for when native HTML falls short — never add redundant or conflicting roles",
-      "path": "plugins/devops/rules/aria-only-when-needed.md"
+      "path": "plugins/devops/skills/rule-aria-only-when-needed/SKILL.md"
     },
     {
       "name": "color-contrast",
       "description": "Meet WCAG 2.2 AA contrast ratios; never use color as the only visual signal",
-      "path": "plugins/devops/rules/color-contrast.md"
+      "path": "plugins/devops/skills/rule-color-contrast/SKILL.md"
     },
     {
       "name": "focus-management",
       "description": "Provide visible focus indicators; move focus intentionally on route change and dialog open/close",
-      "path": "plugins/devops/rules/focus-management.md"
+      "path": "plugins/devops/skills/rule-focus-management/SKILL.md"
     },
     {
       "name": "keyboard-navigation",
       "description": "All interactive elements must be reachable and operable by keyboard alone; no keyboard traps",
-      "path": "plugins/devops/rules/keyboard-navigation.md"
+      "path": "plugins/devops/skills/rule-keyboard-navigation/SKILL.md"
     },
     {
       "name": "reduced-motion",
       "description": "Honor prefers-reduced-motion; never use motion as the sole affordance for a state change",
-      "path": "plugins/devops/rules/reduced-motion.md"
+      "path": "plugins/devops/skills/rule-reduced-motion/SKILL.md"
     },
     {
       "name": "semantic-html",
       "description": "Prefer native HTML elements over div+role soup; semantic elements are accessible by default",
-      "path": "plugins/devops/rules/semantic-html.md"
+      "path": "plugins/devops/skills/rule-semantic-html/SKILL.md"
     },
     {
       "name": "text-alternatives",
       "description": "Provide descriptive alt text for meaningful images; empty alt for decorative; alternatives for icons and media",
-      "path": "plugins/devops/rules/text-alternatives.md"
-    }
-  ],
-  "skills": [
+      "path": "plugins/devops/skills/rule-text-alternatives/SKILL.md"
+    },
     {
       "name": "workspace-hygiene",
       "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",

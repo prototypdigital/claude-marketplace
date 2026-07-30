@@ -4,47 +4,47 @@
     {
       "name": "frontend",
       "description": "Skills and agents for React/TypeScript frontend projects",
-      "path": "plugins/frontend"
+      "source": "./plugins/frontend"
     },
     {
       "name": "fullstack",
       "description": "Skills and agents for full-stack projects (frontend + backend)",
-      "path": "plugins/fullstack"
+      "source": "./plugins/fullstack"
     },
     {
       "name": "backend",
       "description": "Skills and agents for API, database, and service projects",
-      "path": "plugins/backend"
+      "source": "./plugins/backend"
     },
     {
       "name": "devops",
       "description": "Skills and agents for CI/CD, containers, and infrastructure",
-      "path": "plugins/devops"
+      "source": "./plugins/devops"
     },
     {
       "name": "design-engineer",
       "description": "Anti-stock UI craft — design-to-code, visual direction, and design critique",
-      "path": "plugins/design-engineer"
+      "source": "./plugins/design-engineer"
     },
     {
       "name": "nextjs",
       "description": "Rules and skills for Next.js App Router projects",
-      "path": "plugins/nextjs"
+      "source": "./plugins/nextjs"
     },
     {
       "name": "react",
       "description": "Skills for React component and hook patterns",
-      "path": "plugins/react"
+      "source": "./plugins/react"
     },
     {
       "name": "payload",
       "description": "Rules, skills, and agents for Payload CMS projects",
-      "path": "plugins/payload"
+      "source": "./plugins/payload"
     },
     {
       "name": "skeletor",
       "description": "Rules, skills, and an agent for contributing to the @prototyp/skeletor React Native library",
-      "path": "plugins/skeletor"
+      "source": "./plugins/skeletor"
     }
   ]
 }

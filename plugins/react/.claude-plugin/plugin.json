@@ -2,359 +2,357 @@
   "name": "react",
   "displayName": "React",
   "description": "Skills for React component and hook patterns",
-  "rules": [
+  "skills": [
     {
       "name": "coding-standards",
       "description": "Keep functions and components small, readable, and easy to reason about.",
-      "path": "plugins/react/rules/coding-standards.md"
+      "path": "plugins/react/skills/rule-coding-standards/SKILL.md"
     },
     {
       "name": "design-system-reuse",
       "description": "Reuse existing shared UI components and design tokens before creating new ones.",
-      "path": "plugins/react/rules/design-system-reuse.md"
+      "path": "plugins/react/skills/rule-design-system-reuse/SKILL.md"
     },
     {
       "name": "early-returns",
       "description": "Prefer early returns and guard clauses over nested conditionals.",
-      "path": "plugins/react/rules/early-returns.md"
+      "path": "plugins/react/skills/rule-early-returns/SKILL.md"
     },
     {
       "name": "no-console-log",
       "description": "Forbid console.log in production code; use a logger instead.",
-      "path": "plugins/react/rules/no-console-log.md"
+      "path": "plugins/react/skills/rule-no-console-log/SKILL.md"
     },
     {
       "name": "type-safety",
       "description": "Enforce strict type safety — no implicit any, no unguarded assertions.",
-      "path": "plugins/react/rules/type-safety.md"
+      "path": "plugins/react/skills/rule-type-safety/SKILL.md"
     },
     {
       "name": "skeletor-animation",
       "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
-      "path": "plugins/react/rules/skeletor-animation.md"
+      "path": "plugins/react/skills/rule-skeletor-animation/SKILL.md"
     },
     {
       "name": "skeletor-context-defaults",
       "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
-      "path": "plugins/react/rules/skeletor-context-defaults.md"
+      "path": "plugins/react/skills/rule-skeletor-context-defaults/SKILL.md"
     },
     {
       "name": "skeletor-spacing",
       "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
-      "path": "plugins/react/rules/skeletor-spacing.md"
+      "path": "plugins/react/skills/rule-skeletor-spacing/SKILL.md"
     },
     {
       "name": "skeletor-structure",
       "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
-      "path": "plugins/react/rules/skeletor-structure.md"
+      "path": "plugins/react/skills/rule-skeletor-structure/SKILL.md"
     },
     {
       "name": "skeletor-style-props",
       "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
-      "path": "plugins/react/rules/skeletor-style-props.md"
+      "path": "plugins/react/skills/rule-skeletor-style-props/SKILL.md"
     },
     {
       "name": "skeletor-types",
       "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
-      "path": "plugins/react/rules/skeletor-types.md"
+      "path": "plugins/react/skills/rule-skeletor-types/SKILL.md"
     },
     {
       "name": "api-error-handling",
       "description": "Use structured error responses and never leak internal details.",
-      "path": "plugins/react/rules/api-error-handling.md"
+      "path": "plugins/react/skills/rule-api-error-handling/SKILL.md"
     },
     {
       "name": "llm-package-hallucination",
       "description": "Verify every LLM-suggested dependency exists in the registry before installing — hallucinated package names are a real supply-chain attack surface (slopsquatting).",
-      "path": "plugins/react/rules/llm-package-hallucination.md"
+      "path": "plugins/react/skills/rule-llm-package-hallucination/SKILL.md"
     },
     {
       "name": "never-read-env",
       "description": "Never read .env files directly in code.",
-      "path": "plugins/react/rules/never-read-env.md"
+      "path": "plugins/react/skills/rule-never-read-env/SKILL.md"
     },
     {
       "name": "security-secrets",
       "description": "Never hardcode secrets, tokens, or credentials in source code.",
-      "path": "plugins/react/rules/security-secrets.md"
+      "path": "plugins/react/skills/rule-security-secrets/SKILL.md"
     },
     {
       "name": "coverage-meaningful-not-vanity",
       "description": "Assert observable behavior and edge cases; never write tests that execute code without asserting anything",
-      "path": "plugins/react/rules/coverage-meaningful-not-vanity.md"
+      "path": "plugins/react/skills/rule-coverage-meaningful-not-vanity/SKILL.md"
     },
     {
       "name": "flaky-test-policy",
       "description": "Quarantine-then-fix flaky tests; a retried test is a tracked bug, not a pass",
-      "path": "plugins/react/rules/flaky-test-policy.md"
+      "path": "plugins/react/skills/rule-flaky-test-policy/SKILL.md"
     },
     {
       "name": "mocking-boundaries",
       "description": "Mock at I/O and network boundaries only; never mock the unit under test; prefer fakes over deep mock chains",
-      "path": "plugins/react/rules/mocking-boundaries.md"
+      "path": "plugins/react/skills/rule-mocking-boundaries/SKILL.md"
     },
     {
       "name": "test-data-builders",
       "description": "Use factory or builder functions for test fixtures; never scatter inline object literals across the test suite",
-      "path": "plugins/react/rules/test-data-builders.md"
+      "path": "plugins/react/skills/rule-test-data-builders/SKILL.md"
     },
     {
       "name": "test-determinism",
       "description": "Avoid timing-based, random, and wall-clock assertions; use fake timers and frozen clocks instead",
-      "path": "plugins/react/rules/test-determinism.md"
+      "path": "plugins/react/skills/rule-test-determinism/SKILL.md"
     },
     {
       "name": "test-isolation",
       "description": "Each test must set up and tear down its own state; never rely on execution order or shared mutable state",
-      "path": "plugins/react/rules/test-isolation.md"
+      "path": "plugins/react/skills/rule-test-isolation/SKILL.md"
     },
     {
       "name": "test-naming",
       "description": "Name tests as \"it does X when Y\" — describe the behavior under a condition, not the implementation",
-      "path": "plugins/react/rules/test-naming.md"
+      "path": "plugins/react/skills/rule-test-naming/SKILL.md"
     },
     {
       "name": "nextjs-data-fetching",
       "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
-      "path": "plugins/react/rules/nextjs-data-fetching.md"
+      "path": "plugins/react/skills/rule-nextjs-data-fetching/SKILL.md"
     },
     {
       "name": "nextjs-image-optimization",
       "description": "Always use next/image; never raw img tags",
-      "path": "plugins/react/rules/nextjs-image-optimization.md"
+      "path": "plugins/react/skills/rule-nextjs-image-optimization/SKILL.md"
     },
     {
       "name": "nextjs-metadata",
       "description": "Define metadata/generateMetadata per page; never use <Head> in App Router",
-      "path": "plugins/react/rules/nextjs-metadata.md"
+      "path": "plugins/react/skills/rule-nextjs-metadata/SKILL.md"
     },
     {
       "name": "nextjs-public-env-vars",
       "description": "NEXT_PUBLIC_* are inlined into the bundle at build time — never use for secrets or per-environment values.",
-      "path": "plugins/react/rules/nextjs-public-env-vars.md"
+      "path": "plugins/react/skills/rule-nextjs-public-env-vars/SKILL.md"
     },
     {
       "name": "nextjs-server-components",
       "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
-      "path": "plugins/react/rules/nextjs-server-components.md"
+      "path": "plugins/react/skills/rule-nextjs-server-components/SKILL.md"
     },
     {
       "name": "cost-accounting",
       "description": "Measure LLM cost from the authoritative usage object and the provider's cost API — never from your own token estimates.",
-      "path": "plugins/react/rules/cost-accounting.md"
+      "path": "plugins/react/skills/rule-cost-accounting/SKILL.md"
     },
     {
       "name": "model-selection-and-routing",
       "description": "Pick models on the accuracy-vs-cost frontier and route easy queries to cheaper models — the most expensive model is rarely the right default.",
-      "path": "plugins/react/rules/model-selection-and-routing.md"
+      "path": "plugins/react/skills/rule-model-selection-and-routing/SKILL.md"
     },
     {
       "name": "streaming",
       "description": "Stream for perceived latency, but buffer tool-call JSON until the block closes and don't gate safety on partial output.",
-      "path": "plugins/react/rules/streaming.md"
+      "path": "plugins/react/skills/rule-streaming/SKILL.md"
     },
     {
       "name": "git-move",
       "description": "Use git mv for tracked files to preserve history.",
-      "path": "plugins/react/rules/git-move.md"
+      "path": "plugins/react/skills/rule-git-move/SKILL.md"
     },
     {
       "name": "git-workflow",
       "description": "Branch protection, branch naming, and PR workflow rules.",
-      "path": "plugins/react/rules/git-workflow.md"
+      "path": "plugins/react/skills/rule-git-workflow/SKILL.md"
     },
     {
       "name": "pre-commit-checks",
       "description": "Run formatter, linter, and build checks before every commit.",
-      "path": "plugins/react/rules/pre-commit-checks.md"
+      "path": "plugins/react/skills/rule-pre-commit-checks/SKILL.md"
     },
     {
       "name": "docs-parity",
       "description": "Keep documentation in sync with every user-facing change.",
-      "path": "plugins/react/rules/docs-parity.md"
+      "path": "plugins/react/skills/rule-docs-parity/SKILL.md"
     },
     {
       "name": "mermaid-diagrams",
       "description": "Use Mermaid diagrams instead of ASCII art.",
-      "path": "plugins/react/rules/mermaid-diagrams.md"
+      "path": "plugins/react/skills/rule-mermaid-diagrams/SKILL.md"
     },
     {
       "name": "post-edit-diagnostics",
       "description": "Run diagnostics and formatter after editing code files.",
-      "path": "plugins/react/rules/post-edit-diagnostics.md"
+      "path": "plugins/react/skills/rule-post-edit-diagnostics/SKILL.md"
     },
     {
       "name": "ansible-conventions",
       "description": "Follow Ansible best practices for idempotent, maintainable infrastructure automation.",
-      "path": "plugins/react/rules/ansible-conventions.md"
+      "path": "plugins/react/skills/rule-ansible-conventions/SKILL.md"
     },
     {
       "name": "ci-workflow-conventions",
       "description": "Secure CI/CD workflows with minimal permissions, pinned actions, and OIDC authentication.",
-      "path": "plugins/react/rules/ci-workflow-conventions.md"
+      "path": "plugins/react/skills/rule-ci-workflow-conventions/SKILL.md"
     },
     {
       "name": "container-image-pinning",
       "description": "Pin container image versions to prevent unexpected breaking changes.",
-      "path": "plugins/react/rules/container-image-pinning.md"
+      "path": "plugins/react/skills/rule-container-image-pinning/SKILL.md"
     },
     {
       "name": "docker-best-practices",
       "description": "Follow container best practices for secure, efficient Docker images.",
-      "path": "plugins/react/rules/docker-best-practices.md"
+      "path": "plugins/react/skills/rule-docker-best-practices/SKILL.md"
     },
     {
       "name": "helm-conventions",
       "description": "Write safe, reusable Helm charts with secure defaults and consistent values structure.",
-      "path": "plugins/react/rules/helm-conventions.md"
+      "path": "plugins/react/skills/rule-helm-conventions/SKILL.md"
     },
     {
       "name": "idempotency",
       "description": "Every operation — task, script, or deployment — must be safe to re-run without side effects.",
-      "path": "plugins/react/rules/idempotency.md"
+      "path": "plugins/react/skills/rule-idempotency/SKILL.md"
     },
     {
       "name": "jinja2-templates",
       "description": "Write safe, readable Jinja2 templates for Ansible and configuration generation.",
-      "path": "plugins/react/rules/jinja2-templates.md"
+      "path": "plugins/react/skills/rule-jinja2-templates/SKILL.md"
     },
     {
       "name": "kubernetes-manifests",
       "description": "Write safe, production-grade Kubernetes manifests with resource limits, health checks, and security context.",
-      "path": "plugins/react/rules/kubernetes-manifests.md"
+      "path": "plugins/react/skills/rule-kubernetes-manifests/SKILL.md"
     },
     {
       "name": "runbook-discipline",
       "description": "Keep operational runbooks and ADRs accurate and commit them alongside the changes they document.",
-      "path": "plugins/react/rules/runbook-discipline.md"
+      "path": "plugins/react/skills/rule-runbook-discipline/SKILL.md"
     },
     {
       "name": "shell-script-standards",
       "description": "Write safe, portable shell scripts with error handling and clear control flow.",
-      "path": "plugins/react/rules/shell-script-standards.md"
+      "path": "plugins/react/skills/rule-shell-script-standards/SKILL.md"
     },
     {
       "name": "terraform-conventions",
       "description": "Follow Terraform module structure and naming conventions.",
-      "path": "plugins/react/rules/terraform-conventions.md"
+      "path": "plugins/react/skills/rule-terraform-conventions/SKILL.md"
     },
     {
       "name": "anti-stock-defaults",
       "description": "Decide the visual direction before prompting; AI averages toward stock UI, so name what you want and refuse the safe default.",
-      "path": "plugins/react/rules/anti-stock-defaults.md"
+      "path": "plugins/react/skills/rule-anti-stock-defaults/SKILL.md"
     },
     {
       "name": "banned-moves-first",
       "description": "Keep a concrete banned-moves list and apply it to every UI build; closing off easy defaults forces something more intentional out.",
-      "path": "plugins/react/rules/banned-moves-first.md"
+      "path": "plugins/react/skills/rule-banned-moves-first/SKILL.md"
     },
     {
       "name": "design-every-state",
       "description": "Design and build every screen state — empty, loading, error, success — with real content, never just the default with lorem ipsum.",
-      "path": "plugins/react/rules/design-every-state.md"
+      "path": "plugins/react/skills/rule-design-every-state/SKILL.md"
     },
     {
       "name": "references-not-moods",
       "description": "Anchor visual direction to specific named references, not adjectives; concrete coordinates beat moods the model will average away.",
-      "path": "plugins/react/rules/references-not-moods.md"
+      "path": "plugins/react/skills/rule-references-not-moods/SKILL.md"
     },
     {
       "name": "tokens-before-components",
       "description": "Lock the visual system (palette, type, spacing) as tokens before building UI, and re-state them every refinement to prevent token drift.",
-      "path": "plugins/react/rules/tokens-before-components.md"
+      "path": "plugins/react/skills/rule-tokens-before-components/SKILL.md"
     },
     {
       "name": "context-pollution-prevention",
       "description": "Prevent context pollution — scope tool calls to what you need, don't inject noise into the conversation.",
-      "path": "plugins/react/rules/context-pollution-prevention.md"
+      "path": "plugins/react/skills/rule-context-pollution-prevention/SKILL.md"
     },
     {
       "name": "context-positioning",
       "description": "Place load-bearing content at the edges of the context, not the middle — models access the start and end far better than the middle.",
-      "path": "plugins/react/rules/context-positioning.md"
+      "path": "plugins/react/skills/rule-context-positioning/SKILL.md"
     },
     {
       "name": "context-window-budget",
       "description": "Manage context window budget explicitly — prune stale content, compress retrieved data, never let context grow unbounded.",
-      "path": "plugins/react/rules/context-window-budget.md"
+      "path": "plugins/react/skills/rule-context-window-budget/SKILL.md"
     },
     {
       "name": "multi-turn-context-hygiene",
       "description": "Don't keep talking to a derailed conversation — consolidate the requirements and restart fresh. Multi-turn degradation is large and doesn't self-correct.",
-      "path": "plugins/react/rules/multi-turn-context-hygiene.md"
+      "path": "plugins/react/skills/rule-multi-turn-context-hygiene/SKILL.md"
     },
     {
       "name": "multi-turn-state-management",
       "description": "Manage state across multi-turn interactions — track what was decided, what changed, and what is still open.",
-      "path": "plugins/react/rules/multi-turn-state-management.md"
+      "path": "plugins/react/skills/rule-multi-turn-state-management/SKILL.md"
     },
     {
       "name": "prompt-structure",
       "description": "Structure prompts into labeled, delimited sections — separate instructions from data, and keep persistent rules in the system message.",
-      "path": "plugins/react/rules/prompt-structure.md"
+      "path": "plugins/react/skills/rule-prompt-structure/SKILL.md"
     },
     {
       "name": "memory-architecture-checklist",
       "description": "Treat LLM statelessness as a hard constraint — decide explicitly what state survives a turn, which storage tier holds it, and how it is evicted.",
-      "path": "plugins/react/rules/memory-architecture-checklist.md"
+      "path": "plugins/react/skills/rule-memory-architecture-checklist/SKILL.md"
     },
     {
       "name": "memory-promotion",
       "description": "Session observations never write directly to durable memory — promotion runs through a reviewable consolidation step that dedupes, supersedes, and ratifies.",
-      "path": "plugins/react/rules/memory-promotion.md"
+      "path": "plugins/react/skills/rule-memory-promotion/SKILL.md"
     },
     {
       "name": "memory-provenance",
       "description": "Every durable memory carries provenance — source, time, confidence, and whether it was user-stated or agent-inferred. No silent writes.",
-      "path": "plugins/react/rules/memory-provenance.md"
+      "path": "plugins/react/skills/rule-memory-provenance/SKILL.md"
     },
     {
       "name": "memory-recall-authority",
       "description": "Rank recalled memory by authority, not only relevance — and never let stale, contradicted, or superseded memory present as a current constraint.",
-      "path": "plugins/react/rules/memory-recall-authority.md"
+      "path": "plugins/react/skills/rule-memory-recall-authority/SKILL.md"
     },
     {
       "name": "accessible-forms",
       "description": "Every form control must have a programmatic label, clear error identification, and grouped fields where appropriate",
-      "path": "plugins/react/rules/accessible-forms.md"
+      "path": "plugins/react/skills/rule-accessible-forms/SKILL.md"
     },
     {
       "name": "aria-only-when-needed",
       "description": "ARIA is a fallback for when native HTML falls short — never add redundant or conflicting roles",
-      "path": "plugins/react/rules/aria-only-when-needed.md"
+      "path": "plugins/react/skills/rule-aria-only-when-needed/SKILL.md"
     },
     {
       "name": "color-contrast",
       "description": "Meet WCAG 2.2 AA contrast ratios; never use color as the only visual signal",
-      "path": "plugins/react/rules/color-contrast.md"
+      "path": "plugins/react/skills/rule-color-contrast/SKILL.md"
     },
     {
       "name": "focus-management",
       "description": "Provide visible focus indicators; move focus intentionally on route change and dialog open/close",
-      "path": "plugins/react/rules/focus-management.md"
+      "path": "plugins/react/skills/rule-focus-management/SKILL.md"
     },
     {
       "name": "keyboard-navigation",
       "description": "All interactive elements must be reachable and operable by keyboard alone; no keyboard traps",
-      "path": "plugins/react/rules/keyboard-navigation.md"
+      "path": "plugins/react/skills/rule-keyboard-navigation/SKILL.md"
     },
     {
       "name": "reduced-motion",
       "description": "Honor prefers-reduced-motion; never use motion as the sole affordance for a state change",
-      "path": "plugins/react/rules/reduced-motion.md"
+      "path": "plugins/react/skills/rule-reduced-motion/SKILL.md"
     },
     {
       "name": "semantic-html",
       "description": "Prefer native HTML elements over div+role soup; semantic elements are accessible by default",
-      "path": "plugins/react/rules/semantic-html.md"
+      "path": "plugins/react/skills/rule-semantic-html/SKILL.md"
     },
     {
       "name": "text-alternatives",
       "description": "Provide descriptive alt text for meaningful images; empty alt for decorative; alternatives for icons and media",
-      "path": "plugins/react/rules/text-alternatives.md"
-    }
-  ],
-  "skills": [
+      "path": "plugins/react/skills/rule-text-alternatives/SKILL.md"
+    },
     {
       "name": "workspace-hygiene",
       "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",

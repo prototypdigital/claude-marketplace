@@ -2,189 +2,187 @@
   "name": "design-engineer",
   "displayName": "Design Engineer",
   "description": "Anti-stock UI craft — design-to-code, visual direction, and design critique",
-  "rules": [
+  "skills": [
     {
       "name": "skeletor-animation",
       "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
-      "path": "plugins/design-engineer/rules/skeletor-animation.md"
+      "path": "plugins/design-engineer/skills/rule-skeletor-animation/SKILL.md"
     },
     {
       "name": "skeletor-context-defaults",
       "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
-      "path": "plugins/design-engineer/rules/skeletor-context-defaults.md"
+      "path": "plugins/design-engineer/skills/rule-skeletor-context-defaults/SKILL.md"
     },
     {
       "name": "skeletor-spacing",
       "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
-      "path": "plugins/design-engineer/rules/skeletor-spacing.md"
+      "path": "plugins/design-engineer/skills/rule-skeletor-spacing/SKILL.md"
     },
     {
       "name": "skeletor-structure",
       "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
-      "path": "plugins/design-engineer/rules/skeletor-structure.md"
+      "path": "plugins/design-engineer/skills/rule-skeletor-structure/SKILL.md"
     },
     {
       "name": "skeletor-style-props",
       "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
-      "path": "plugins/design-engineer/rules/skeletor-style-props.md"
+      "path": "plugins/design-engineer/skills/rule-skeletor-style-props/SKILL.md"
     },
     {
       "name": "skeletor-types",
       "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
-      "path": "plugins/design-engineer/rules/skeletor-types.md"
+      "path": "plugins/design-engineer/skills/rule-skeletor-types/SKILL.md"
     },
     {
       "name": "api-error-handling",
       "description": "Use structured error responses and never leak internal details.",
-      "path": "plugins/design-engineer/rules/api-error-handling.md"
+      "path": "plugins/design-engineer/skills/rule-api-error-handling/SKILL.md"
     },
     {
       "name": "llm-package-hallucination",
       "description": "Verify every LLM-suggested dependency exists in the registry before installing — hallucinated package names are a real supply-chain attack surface (slopsquatting).",
-      "path": "plugins/design-engineer/rules/llm-package-hallucination.md"
+      "path": "plugins/design-engineer/skills/rule-llm-package-hallucination/SKILL.md"
     },
     {
       "name": "never-read-env",
       "description": "Never read .env files directly in code.",
-      "path": "plugins/design-engineer/rules/never-read-env.md"
+      "path": "plugins/design-engineer/skills/rule-never-read-env/SKILL.md"
     },
     {
       "name": "security-secrets",
       "description": "Never hardcode secrets, tokens, or credentials in source code.",
-      "path": "plugins/design-engineer/rules/security-secrets.md"
+      "path": "plugins/design-engineer/skills/rule-security-secrets/SKILL.md"
     },
     {
       "name": "coverage-meaningful-not-vanity",
       "description": "Assert observable behavior and edge cases; never write tests that execute code without asserting anything",
-      "path": "plugins/design-engineer/rules/coverage-meaningful-not-vanity.md"
+      "path": "plugins/design-engineer/skills/rule-coverage-meaningful-not-vanity/SKILL.md"
     },
     {
       "name": "flaky-test-policy",
       "description": "Quarantine-then-fix flaky tests; a retried test is a tracked bug, not a pass",
-      "path": "plugins/design-engineer/rules/flaky-test-policy.md"
+      "path": "plugins/design-engineer/skills/rule-flaky-test-policy/SKILL.md"
     },
     {
       "name": "mocking-boundaries",
       "description": "Mock at I/O and network boundaries only; never mock the unit under test; prefer fakes over deep mock chains",
-      "path": "plugins/design-engineer/rules/mocking-boundaries.md"
+      "path": "plugins/design-engineer/skills/rule-mocking-boundaries/SKILL.md"
     },
     {
       "name": "test-data-builders",
       "description": "Use factory or builder functions for test fixtures; never scatter inline object literals across the test suite",
-      "path": "plugins/design-engineer/rules/test-data-builders.md"
+      "path": "plugins/design-engineer/skills/rule-test-data-builders/SKILL.md"
     },
     {
       "name": "test-determinism",
       "description": "Avoid timing-based, random, and wall-clock assertions; use fake timers and frozen clocks instead",
-      "path": "plugins/design-engineer/rules/test-determinism.md"
+      "path": "plugins/design-engineer/skills/rule-test-determinism/SKILL.md"
     },
     {
       "name": "test-isolation",
       "description": "Each test must set up and tear down its own state; never rely on execution order or shared mutable state",
-      "path": "plugins/design-engineer/rules/test-isolation.md"
+      "path": "plugins/design-engineer/skills/rule-test-isolation/SKILL.md"
     },
     {
       "name": "test-naming",
       "description": "Name tests as \"it does X when Y\" — describe the behavior under a condition, not the implementation",
-      "path": "plugins/design-engineer/rules/test-naming.md"
+      "path": "plugins/design-engineer/skills/rule-test-naming/SKILL.md"
     },
     {
       "name": "git-move",
       "description": "Use git mv for tracked files to preserve history.",
-      "path": "plugins/design-engineer/rules/git-move.md"
+      "path": "plugins/design-engineer/skills/rule-git-move/SKILL.md"
     },
     {
       "name": "git-workflow",
       "description": "Branch protection, branch naming, and PR workflow rules.",
-      "path": "plugins/design-engineer/rules/git-workflow.md"
+      "path": "plugins/design-engineer/skills/rule-git-workflow/SKILL.md"
     },
     {
       "name": "pre-commit-checks",
       "description": "Run formatter, linter, and build checks before every commit.",
-      "path": "plugins/design-engineer/rules/pre-commit-checks.md"
+      "path": "plugins/design-engineer/skills/rule-pre-commit-checks/SKILL.md"
     },
     {
       "name": "docs-parity",
       "description": "Keep documentation in sync with every user-facing change.",
-      "path": "plugins/design-engineer/rules/docs-parity.md"
+      "path": "plugins/design-engineer/skills/rule-docs-parity/SKILL.md"
     },
     {
       "name": "mermaid-diagrams",
       "description": "Use Mermaid diagrams instead of ASCII art.",
-      "path": "plugins/design-engineer/rules/mermaid-diagrams.md"
+      "path": "plugins/design-engineer/skills/rule-mermaid-diagrams/SKILL.md"
     },
     {
       "name": "post-edit-diagnostics",
       "description": "Run diagnostics and formatter after editing code files.",
-      "path": "plugins/design-engineer/rules/post-edit-diagnostics.md"
+      "path": "plugins/design-engineer/skills/rule-post-edit-diagnostics/SKILL.md"
     },
     {
       "name": "anti-stock-defaults",
       "description": "Decide the visual direction before prompting; AI averages toward stock UI, so name what you want and refuse the safe default.",
-      "path": "plugins/design-engineer/rules/anti-stock-defaults.md"
+      "path": "plugins/design-engineer/skills/rule-anti-stock-defaults/SKILL.md"
     },
     {
       "name": "banned-moves-first",
       "description": "Keep a concrete banned-moves list and apply it to every UI build; closing off easy defaults forces something more intentional out.",
-      "path": "plugins/design-engineer/rules/banned-moves-first.md"
+      "path": "plugins/design-engineer/skills/rule-banned-moves-first/SKILL.md"
     },
     {
       "name": "design-every-state",
       "description": "Design and build every screen state — empty, loading, error, success — with real content, never just the default with lorem ipsum.",
-      "path": "plugins/design-engineer/rules/design-every-state.md"
+      "path": "plugins/design-engineer/skills/rule-design-every-state/SKILL.md"
     },
     {
       "name": "references-not-moods",
       "description": "Anchor visual direction to specific named references, not adjectives; concrete coordinates beat moods the model will average away.",
-      "path": "plugins/design-engineer/rules/references-not-moods.md"
+      "path": "plugins/design-engineer/skills/rule-references-not-moods/SKILL.md"
     },
     {
       "name": "tokens-before-components",
       "description": "Lock the visual system (palette, type, spacing) as tokens before building UI, and re-state them every refinement to prevent token drift.",
-      "path": "plugins/design-engineer/rules/tokens-before-components.md"
+      "path": "plugins/design-engineer/skills/rule-tokens-before-components/SKILL.md"
     },
     {
       "name": "accessible-forms",
       "description": "Every form control must have a programmatic label, clear error identification, and grouped fields where appropriate",
-      "path": "plugins/design-engineer/rules/accessible-forms.md"
+      "path": "plugins/design-engineer/skills/rule-accessible-forms/SKILL.md"
     },
     {
       "name": "aria-only-when-needed",
       "description": "ARIA is a fallback for when native HTML falls short — never add redundant or conflicting roles",
-      "path": "plugins/design-engineer/rules/aria-only-when-needed.md"
+      "path": "plugins/design-engineer/skills/rule-aria-only-when-needed/SKILL.md"
     },
     {
       "name": "color-contrast",
       "description": "Meet WCAG 2.2 AA contrast ratios; never use color as the only visual signal",
-      "path": "plugins/design-engineer/rules/color-contrast.md"
+      "path": "plugins/design-engineer/skills/rule-color-contrast/SKILL.md"
     },
     {
       "name": "focus-management",
       "description": "Provide visible focus indicators; move focus intentionally on route change and dialog open/close",
-      "path": "plugins/design-engineer/rules/focus-management.md"
+      "path": "plugins/design-engineer/skills/rule-focus-management/SKILL.md"
     },
     {
       "name": "keyboard-navigation",
       "description": "All interactive elements must be reachable and operable by keyboard alone; no keyboard traps",
-      "path": "plugins/design-engineer/rules/keyboard-navigation.md"
+      "path": "plugins/design-engineer/skills/rule-keyboard-navigation/SKILL.md"
     },
     {
       "name": "reduced-motion",
       "description": "Honor prefers-reduced-motion; never use motion as the sole affordance for a state change",
-      "path": "plugins/design-engineer/rules/reduced-motion.md"
+      "path": "plugins/design-engineer/skills/rule-reduced-motion/SKILL.md"
     },
     {
       "name": "semantic-html",
       "description": "Prefer native HTML elements over div+role soup; semantic elements are accessible by default",
-      "path": "plugins/design-engineer/rules/semantic-html.md"
+      "path": "plugins/design-engineer/skills/rule-semantic-html/SKILL.md"
     },
     {
       "name": "text-alternatives",
       "description": "Provide descriptive alt text for meaningful images; empty alt for decorative; alternatives for icons and media",
-      "path": "plugins/design-engineer/rules/text-alternatives.md"
-    }
-  ],
-  "skills": [
+      "path": "plugins/design-engineer/skills/rule-text-alternatives/SKILL.md"
+    },
     {
       "name": "workspace-hygiene",
       "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",
