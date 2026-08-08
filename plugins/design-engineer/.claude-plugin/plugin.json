@@ -251,6 +251,11 @@
       "path": "plugins/design-engineer/agents/session-auditor.md"
     },
     {
+      "name": "pr-reviewer",
+      "description": "Headless PR reviewer — fetches PR context via gh, reviews intent-first with Conventional Comments findings, posts one comment-only review. Never approves. For in-session review use code-reviewer.",
+      "path": "plugins/design-engineer/agents/pr-reviewer.md"
+    },
+    {
       "name": "payload-specialist",
       "description": "Builds and reviews Payload CMS schemas — collections, globals, blocks, fields, hooks, access, Lexical, plugins, migrations, payload-types. Use proactively for payload.config work. Not generic APIs.",
       "path": "plugins/design-engineer/agents/payload-specialist.md"

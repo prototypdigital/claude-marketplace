@@ -244,6 +244,11 @@
       "path": "plugins/devops/skills/rollback-plan/SKILL.md"
     },
     {
+      "name": "pr-review-loop",
+      "description": "Wires automated comment-only PR reviews — a GitHub Actions backstop on every PR push plus a local hook that reviews PRs the moment an agent opens them. Use when setting up automated PR review.",
+      "path": "plugins/devops/skills/pr-review-loop/SKILL.md"
+    },
+    {
       "name": "payload-cache-revalidation",
       "description": "Standardizes Next.js + Payload cache revalidation — a cacheTags source of truth, per-locale vs locale-agnostic tags, hooks per cached collection. Use when editing unstable_cache or revalidation hooks.",
       "path": "plugins/devops/skills/payload-cache-revalidation/SKILL.md"
@@ -309,6 +314,11 @@
       "name": "security-specialist",
       "description": "Audits code for OWASP Top 10 vulns, injection, broken auth/access control, secrets exposure, and dependency/supply-chain CVEs. MUST BE USED for deep security review. Reports findings, does not edit.",
       "path": "plugins/devops/agents/security-specialist.md"
+    },
+    {
+      "name": "pr-reviewer",
+      "description": "Headless PR reviewer — fetches PR context via gh, reviews intent-first with Conventional Comments findings, posts one comment-only review. Never approves. For in-session review use code-reviewer.",
+      "path": "plugins/devops/agents/pr-reviewer.md"
     },
     {
       "name": "payload-specialist",
