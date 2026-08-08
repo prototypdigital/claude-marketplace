@@ -229,6 +229,11 @@
       "path": "plugins/frontend/skills/new-skeletor-primitive/SKILL.md"
     },
     {
+      "name": "session-retrospective",
+      "description": "Audits a Claude Code session — deterministic jq analysis of token spend and tool usage, then a judged retrospective in .claude/retrospectives/. Use after a task or when a session felt expensive.",
+      "path": "plugins/frontend/skills/session-retrospective/SKILL.md"
+    },
+    {
       "name": "react-patterns",
       "description": "Apply React composition, co-location, hook extraction, and state-placement patterns when writing or reviewing components, hooks, or state. Fixes prop drilling and logic tangled in JSX.",
       "path": "plugins/frontend/skills/react-patterns/SKILL.md"
@@ -284,6 +289,11 @@
       "name": "skeletor-specialist",
       "description": "",
       "path": "plugins/frontend/agents/skeletor-specialist.md"
+    },
+    {
+      "name": "session-auditor",
+      "description": "Audits a Claude Code session transcript for token spend and harness-usage quality — wasted calls, missed delegation, cache misses — and writes a graded retrospective. Use after a session ends.",
+      "path": "plugins/frontend/agents/session-auditor.md"
     },
     {
       "name": "payload-specialist",

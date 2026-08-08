@@ -194,6 +194,11 @@
       "path": "plugins/design-engineer/skills/visual-direction/SKILL.md"
     },
     {
+      "name": "session-retrospective",
+      "description": "Audits a Claude Code session — deterministic jq analysis of token spend and tool usage, then a judged retrospective in .claude/retrospectives/. Use after a task or when a session felt expensive.",
+      "path": "plugins/design-engineer/skills/session-retrospective/SKILL.md"
+    },
+    {
       "name": "payload-cache-revalidation",
       "description": "Standardizes Next.js + Payload cache revalidation — a cacheTags source of truth, per-locale vs locale-agnostic tags, hooks per cached collection. Use when editing unstable_cache or revalidation hooks.",
       "path": "plugins/design-engineer/skills/payload-cache-revalidation/SKILL.md"
@@ -239,6 +244,11 @@
       "name": "skeletor-specialist",
       "description": "",
       "path": "plugins/design-engineer/agents/skeletor-specialist.md"
+    },
+    {
+      "name": "session-auditor",
+      "description": "Audits a Claude Code session transcript for token spend and harness-usage quality — wasted calls, missed delegation, cache misses — and writes a graded retrospective. Use after a session ends.",
+      "path": "plugins/design-engineer/agents/session-auditor.md"
     },
     {
       "name": "payload-specialist",

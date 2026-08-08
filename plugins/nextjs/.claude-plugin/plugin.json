@@ -414,6 +414,11 @@
       "path": "plugins/nextjs/skills/new-skeletor-primitive/SKILL.md"
     },
     {
+      "name": "session-retrospective",
+      "description": "Audits a Claude Code session — deterministic jq analysis of token spend and tool usage, then a judged retrospective in .claude/retrospectives/. Use after a task or when a session felt expensive.",
+      "path": "plugins/nextjs/skills/session-retrospective/SKILL.md"
+    },
+    {
       "name": "security-audit",
       "description": "Triages code security findings by severity with detection steps for secrets, injection, auth, input, and dependency risks. Use when reviewing changes pre-deploy or touching auth, input, or uploads.",
       "path": "plugins/nextjs/skills/security-audit/SKILL.md"
@@ -519,6 +524,11 @@
       "name": "skeletor-specialist",
       "description": "",
       "path": "plugins/nextjs/agents/skeletor-specialist.md"
+    },
+    {
+      "name": "session-auditor",
+      "description": "Audits a Claude Code session transcript for token spend and harness-usage quality — wasted calls, missed delegation, cache misses — and writes a graded retrospective. Use after a session ends.",
+      "path": "plugins/nextjs/agents/session-auditor.md"
     },
     {
       "name": "security-specialist",
