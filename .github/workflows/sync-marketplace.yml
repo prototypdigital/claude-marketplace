@@ -7,6 +7,10 @@ on:
       - 'llm/**'
       - 'bluetemberg.config.json'
   workflow_dispatch:
+  # Upstream pack fixes in bluetemberg-packs do not touch this repo, so the
+  # push trigger never sees them; the weekly run picks them up.
+  schedule:
+    - cron: '0 6 * * 1'
 
 permissions:
   contents: write
