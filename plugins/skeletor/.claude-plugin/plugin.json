@@ -29,6 +29,26 @@
       "path": "plugins/skeletor/skills/rule-type-safety/SKILL.md"
     },
     {
+      "name": "tailwind-breakpoints-single-source",
+      "description": "Define breakpoints once in a single cssVariables.js export and import them; never hardcode pixel breakpoint values as magic numbers in JS",
+      "path": "plugins/skeletor/skills/rule-tailwind-breakpoints-single-source/SKILL.md"
+    },
+    {
+      "name": "tailwind-custom-utilities",
+      "description": "Define custom Tailwind utilities with @utility and custom variants with @custom-variant; never hand-roll a global class or duplicate the utility inline",
+      "path": "plugins/skeletor/skills/rule-tailwind-custom-utilities/SKILL.md"
+    },
+    {
+      "name": "tailwind-fluid-typography",
+      "description": "Use fluid utilities (fl-text-{mobile}/{desktop}, fl-py-{mobile}/{desktop}) for body and heading copy and section spacing; never fixed text-/py- steps",
+      "path": "plugins/skeletor/skills/rule-tailwind-fluid-typography/SKILL.md"
+    },
+    {
+      "name": "tailwind-theme-tokens",
+      "description": "Define every Tailwind design token as a CSS variable in the @theme block (colors in OKLch); never hardcode values in class names or inline styles",
+      "path": "plugins/skeletor/skills/rule-tailwind-theme-tokens/SKILL.md"
+    },
+    {
       "name": "skeletor-animation",
       "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
       "path": "plugins/skeletor/skills/rule-skeletor-animation/SKILL.md"
@@ -114,9 +134,24 @@
       "path": "plugins/skeletor/skills/rule-test-naming/SKILL.md"
     },
     {
+      "name": "github-full-urls",
+      "description": "Link to PRs and issues with full GitHub URLs, never owner/repo#123 shorthand as the link itself (plain-prose cross-repo mentions may still use it).",
+      "path": "plugins/skeletor/skills/rule-github-full-urls/SKILL.md"
+    },
+    {
+      "name": "nextjs-app-router-params",
+      "description": "Always await params/searchParams (they are Promises in Next.js 15+); default a missing locale to the fallback and return notFound() for invalid locale/slug",
+      "path": "plugins/skeletor/skills/rule-nextjs-app-router-params/SKILL.md"
+    },
+    {
       "name": "nextjs-data-fetching",
       "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
       "path": "plugins/skeletor/skills/rule-nextjs-data-fetching/SKILL.md"
+    },
+    {
+      "name": "nextjs-force-static",
+      "description": "Content pages export const dynamic = 'force-static' with an empty generateStaticParams() for on-demand ISR; never fetch inside the component body",
+      "path": "plugins/skeletor/skills/rule-nextjs-force-static/SKILL.md"
     },
     {
       "name": "nextjs-image-optimization",
@@ -137,6 +172,11 @@
       "name": "nextjs-server-components",
       "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
       "path": "plugins/skeletor/skills/rule-nextjs-server-components/SKILL.md"
+    },
+    {
+      "name": "nextjs-server-only-boundary",
+      "description": "Default to Server Components and put 'use client' only on the smallest interactive leaf; guard secret-bearing server modules with import 'server-only'",
+      "path": "plugins/skeletor/skills/rule-nextjs-server-only-boundary/SKILL.md"
     },
     {
       "name": "cost-accounting",
@@ -294,6 +334,11 @@
       "path": "plugins/skeletor/skills/rule-prompt-structure/SKILL.md"
     },
     {
+      "name": "no-agent-attribution",
+      "description": "Never leave AI agent-attribution residue in commits, PRs, or other persisted artifacts.",
+      "path": "plugins/skeletor/skills/rule-no-agent-attribution/SKILL.md"
+    },
+    {
       "name": "memory-architecture-checklist",
       "description": "Treat LLM statelessness as a hard constraint — decide explicitly what state survives a turn, which storage tier holds it, and how it is evicted.",
       "path": "plugins/skeletor/skills/rule-memory-architecture-checklist/SKILL.md"
@@ -410,8 +455,13 @@
     },
     {
       "name": "pr-review-loop",
-      "description": "Wires automated comment-only PR reviews — a GitHub Actions backstop on every PR push plus a local hook that reviews PRs the moment an agent opens them. Use when setting up automated PR review.",
+      "description": "Wires automated comment-only PR reviews through a local hook that reviews PRs the moment an agent opens them. Never touches the CI/CD pipeline. Use when setting up automated PR review.",
       "path": "plugins/skeletor/skills/pr-review-loop/SKILL.md"
+    },
+    {
+      "name": "payload-migrations",
+      "description": "",
+      "path": "plugins/skeletor/skills/payload-migrations/SKILL.md"
     },
     {
       "name": "payload-cache-revalidation",
@@ -419,9 +469,24 @@
       "path": "plugins/skeletor/skills/payload-cache-revalidation/SKILL.md"
     },
     {
+      "name": "payload-blocks",
+      "description": "",
+      "path": "plugins/skeletor/skills/payload-blocks/SKILL.md"
+    },
+    {
       "name": "patterns",
       "description": "Finds and reuses an existing codebase pattern instead of inventing new structure. Use when adding files or abstractions, reviewing folder structure, naming, or module boundaries, or refactoring.",
       "path": "plugins/skeletor/skills/patterns/SKILL.md"
+    },
+    {
+      "name": "orval-openapi",
+      "description": "",
+      "path": "plugins/skeletor/skills/orval-openapi/SKILL.md"
+    },
+    {
+      "name": "nextjs-caching",
+      "description": "",
+      "path": "plugins/skeletor/skills/nextjs-caching/SKILL.md"
     },
     {
       "name": "migration-safety",
@@ -432,6 +497,11 @@
       "name": "k6-load-testing",
       "description": "Standardizes k6 load tests — scenario taxonomy, shared config/requests libs, baseline-driven p95 thresholds, __ENV parametrization, and a CI smoke gate. Use when writing or editing k6 scripts.",
       "path": "plugins/skeletor/skills/k6-load-testing/SKILL.md"
+    },
+    {
+      "name": "integration-safety",
+      "description": "",
+      "path": "plugins/skeletor/skills/integration-safety/SKILL.md"
     },
     {
       "name": "infrastructure-drift-check",
@@ -447,6 +517,11 @@
       "name": "docs-upkeep",
       "description": "Updates affected docs in the same task as code or workflow changes — README, API docs, CLI --help, config, wiki. Use when renaming endpoints, adding flags/config, or fixing stale references.",
       "path": "plugins/skeletor/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "design-system",
+      "description": "",
+      "path": "plugins/skeletor/skills/design-system/SKILL.md"
     },
     {
       "name": "design-critique",

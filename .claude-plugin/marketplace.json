@@ -41,6 +41,11 @@
       "source": "./plugins/react"
     },
     {
+      "name": "tailwind",
+      "description": "Rules for Tailwind CSS v4 token, typography, and utility discipline",
+      "source": "./plugins/tailwind"
+    },
+    {
       "name": "payload",
       "description": "Rules, skills, and agents for Payload CMS projects",
       "source": "./plugins/payload"

@@ -29,6 +29,26 @@
       "path": "plugins/frontend/skills/rule-type-safety/SKILL.md"
     },
     {
+      "name": "tailwind-breakpoints-single-source",
+      "description": "Define breakpoints once in a single cssVariables.js export and import them; never hardcode pixel breakpoint values as magic numbers in JS",
+      "path": "plugins/frontend/skills/rule-tailwind-breakpoints-single-source/SKILL.md"
+    },
+    {
+      "name": "tailwind-custom-utilities",
+      "description": "Define custom Tailwind utilities with @utility and custom variants with @custom-variant; never hand-roll a global class or duplicate the utility inline",
+      "path": "plugins/frontend/skills/rule-tailwind-custom-utilities/SKILL.md"
+    },
+    {
+      "name": "tailwind-fluid-typography",
+      "description": "Use fluid utilities (fl-text-{mobile}/{desktop}, fl-py-{mobile}/{desktop}) for body and heading copy and section spacing; never fixed text-/py- steps",
+      "path": "plugins/frontend/skills/rule-tailwind-fluid-typography/SKILL.md"
+    },
+    {
+      "name": "tailwind-theme-tokens",
+      "description": "Define every Tailwind design token as a CSS variable in the @theme block (colors in OKLch); never hardcode values in class names or inline styles",
+      "path": "plugins/frontend/skills/rule-tailwind-theme-tokens/SKILL.md"
+    },
+    {
       "name": "skeletor-animation",
       "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
       "path": "plugins/frontend/skills/rule-skeletor-animation/SKILL.md"
@@ -114,9 +134,24 @@
       "path": "plugins/frontend/skills/rule-test-naming/SKILL.md"
     },
     {
+      "name": "github-full-urls",
+      "description": "Link to PRs and issues with full GitHub URLs, never owner/repo#123 shorthand as the link itself (plain-prose cross-repo mentions may still use it).",
+      "path": "plugins/frontend/skills/rule-github-full-urls/SKILL.md"
+    },
+    {
+      "name": "nextjs-app-router-params",
+      "description": "Always await params/searchParams (they are Promises in Next.js 15+); default a missing locale to the fallback and return notFound() for invalid locale/slug",
+      "path": "plugins/frontend/skills/rule-nextjs-app-router-params/SKILL.md"
+    },
+    {
       "name": "nextjs-data-fetching",
       "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
       "path": "plugins/frontend/skills/rule-nextjs-data-fetching/SKILL.md"
+    },
+    {
+      "name": "nextjs-force-static",
+      "description": "Content pages export const dynamic = 'force-static' with an empty generateStaticParams() for on-demand ISR; never fetch inside the component body",
+      "path": "plugins/frontend/skills/rule-nextjs-force-static/SKILL.md"
     },
     {
       "name": "nextjs-image-optimization",
@@ -137,6 +172,11 @@
       "name": "nextjs-server-components",
       "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
       "path": "plugins/frontend/skills/rule-nextjs-server-components/SKILL.md"
+    },
+    {
+      "name": "nextjs-server-only-boundary",
+      "description": "Default to Server Components and put 'use client' only on the smallest interactive leaf; guard secret-bearing server modules with import 'server-only'",
+      "path": "plugins/frontend/skills/rule-nextjs-server-only-boundary/SKILL.md"
     },
     {
       "name": "git-move",
@@ -167,6 +207,11 @@
       "name": "post-edit-diagnostics",
       "description": "Run diagnostics and formatter after editing code files.",
       "path": "plugins/frontend/skills/rule-post-edit-diagnostics/SKILL.md"
+    },
+    {
+      "name": "no-agent-attribution",
+      "description": "Never leave AI agent-attribution residue in commits, PRs, or other persisted artifacts.",
+      "path": "plugins/frontend/skills/rule-no-agent-attribution/SKILL.md"
     },
     {
       "name": "accessible-forms",
@@ -240,8 +285,13 @@
     },
     {
       "name": "pr-review-loop",
-      "description": "Wires automated comment-only PR reviews — a GitHub Actions backstop on every PR push plus a local hook that reviews PRs the moment an agent opens them. Use when setting up automated PR review.",
+      "description": "Wires automated comment-only PR reviews through a local hook that reviews PRs the moment an agent opens them. Never touches the CI/CD pipeline. Use when setting up automated PR review.",
       "path": "plugins/frontend/skills/pr-review-loop/SKILL.md"
+    },
+    {
+      "name": "payload-migrations",
+      "description": "",
+      "path": "plugins/frontend/skills/payload-migrations/SKILL.md"
     },
     {
       "name": "payload-cache-revalidation",
@@ -249,14 +299,39 @@
       "path": "plugins/frontend/skills/payload-cache-revalidation/SKILL.md"
     },
     {
+      "name": "payload-blocks",
+      "description": "",
+      "path": "plugins/frontend/skills/payload-blocks/SKILL.md"
+    },
+    {
       "name": "patterns",
       "description": "Finds and reuses an existing codebase pattern instead of inventing new structure. Use when adding files or abstractions, reviewing folder structure, naming, or module boundaries, or refactoring.",
       "path": "plugins/frontend/skills/patterns/SKILL.md"
     },
     {
+      "name": "orval-openapi",
+      "description": "",
+      "path": "plugins/frontend/skills/orval-openapi/SKILL.md"
+    },
+    {
+      "name": "nextjs-caching",
+      "description": "",
+      "path": "plugins/frontend/skills/nextjs-caching/SKILL.md"
+    },
+    {
+      "name": "integration-safety",
+      "description": "",
+      "path": "plugins/frontend/skills/integration-safety/SKILL.md"
+    },
+    {
       "name": "docs-upkeep",
       "description": "Updates affected docs in the same task as code or workflow changes — README, API docs, CLI --help, config, wiki. Use when renaming endpoints, adding flags/config, or fixing stale references.",
       "path": "plugins/frontend/skills/docs-upkeep/SKILL.md"
+    },
+    {
+      "name": "design-system",
+      "description": "",
+      "path": "plugins/frontend/skills/design-system/SKILL.md"
     },
     {
       "name": "create-skill",
