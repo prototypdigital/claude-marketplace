@@ -29,56 +29,6 @@
       "path": "plugins/frontend/skills/rule-type-safety/SKILL.md"
     },
     {
-      "name": "tailwind-breakpoints-single-source",
-      "description": "Define breakpoints once in a single cssVariables.js export and import them; never hardcode pixel breakpoint values as magic numbers in JS",
-      "path": "plugins/frontend/skills/rule-tailwind-breakpoints-single-source/SKILL.md"
-    },
-    {
-      "name": "tailwind-custom-utilities",
-      "description": "Define custom Tailwind utilities with @utility and custom variants with @custom-variant; never hand-roll a global class or duplicate the utility inline",
-      "path": "plugins/frontend/skills/rule-tailwind-custom-utilities/SKILL.md"
-    },
-    {
-      "name": "tailwind-fluid-typography",
-      "description": "Use fluid utilities (fl-text-{mobile}/{desktop}, fl-py-{mobile}/{desktop}) for body and heading copy and section spacing; never fixed text-/py- steps",
-      "path": "plugins/frontend/skills/rule-tailwind-fluid-typography/SKILL.md"
-    },
-    {
-      "name": "tailwind-theme-tokens",
-      "description": "Define every Tailwind design token as a CSS variable in the @theme block (colors in OKLch); never hardcode values in class names or inline styles",
-      "path": "plugins/frontend/skills/rule-tailwind-theme-tokens/SKILL.md"
-    },
-    {
-      "name": "skeletor-animation",
-      "description": "Skeletor animations use React Native's built-in Animated API (never Reanimated), default native true, return useRef(create...).current for ref stability, and expose forward/backward/reset.",
-      "path": "plugins/frontend/skills/rule-skeletor-animation/SKILL.md"
-    },
-    {
-      "name": "skeletor-context-defaults",
-      "description": "Skeletor component defaults resolve from useSkeletor(); new global defaults go in SkeletorConfig + SkeletorDefaults; props always win over context; no hardcoded magic values in component bodies.",
-      "path": "plugins/frontend/skills/rule-skeletor-context-defaults/SKILL.md"
-    },
-    {
-      "name": "skeletor-spacing",
-      "description": "Skeletor spacing props (margins/paddings/gap) are polymorphic — scalar, tuple, four-side tuple, or object — and must normalize through the existing normalize-* helpers, never hand-rolled shorthand.",
-      "path": "plugins/frontend/skills/rule-skeletor-spacing/SKILL.md"
-    },
-    {
-      "name": "skeletor-structure",
-      "description": "Every skeletor component gets its own folder with an index.ts barrel, internal elements get a displayName, and all cross-module imports are relative — never bare utils/models/components/hooks.",
-      "path": "plugins/frontend/skills/rule-skeletor-structure/SKILL.md"
-    },
-    {
-      "name": "skeletor-style-props",
-      "description": "Skeletor primitives accept a typed style-prop intersection, convert via extractSkeletorStyleProperties + memoizeStyle, and apply styles in canonical order — never StyleSheet.create in a body.",
-      "path": "plugins/frontend/skills/rule-skeletor-style-props/SKILL.md"
-    },
-    {
-      "name": "skeletor-types",
-      "description": "Derive skeletor types via template-literal/mapped/Extract over RN types, not hand-maintained unions; keep Font ambient; no any without a biome-ignore, no as without a comment.",
-      "path": "plugins/frontend/skills/rule-skeletor-types/SKILL.md"
-    },
-    {
       "name": "api-error-handling",
       "description": "Use structured error responses and never leak internal details.",
       "path": "plugins/frontend/skills/rule-api-error-handling/SKILL.md"
@@ -137,46 +87,6 @@
       "name": "github-full-urls",
       "description": "Link to PRs and issues with full GitHub URLs, never owner/repo#123 shorthand as the link itself (plain-prose cross-repo mentions may still use it).",
       "path": "plugins/frontend/skills/rule-github-full-urls/SKILL.md"
-    },
-    {
-      "name": "nextjs-app-router-params",
-      "description": "Always await params/searchParams (they are Promises in Next.js 15+); default a missing locale to the fallback and return notFound() for invalid locale/slug",
-      "path": "plugins/frontend/skills/rule-nextjs-app-router-params/SKILL.md"
-    },
-    {
-      "name": "nextjs-data-fetching",
-      "description": "Prefer fetch with cache options in Server Components over useEffect + API calls",
-      "path": "plugins/frontend/skills/rule-nextjs-data-fetching/SKILL.md"
-    },
-    {
-      "name": "nextjs-force-static",
-      "description": "Content pages export const dynamic = 'force-static' with an empty generateStaticParams() for on-demand ISR; never fetch inside the component body",
-      "path": "plugins/frontend/skills/rule-nextjs-force-static/SKILL.md"
-    },
-    {
-      "name": "nextjs-image-optimization",
-      "description": "Always use next/image; never raw img tags",
-      "path": "plugins/frontend/skills/rule-nextjs-image-optimization/SKILL.md"
-    },
-    {
-      "name": "nextjs-metadata",
-      "description": "Define metadata/generateMetadata per page; never use <Head> in App Router",
-      "path": "plugins/frontend/skills/rule-nextjs-metadata/SKILL.md"
-    },
-    {
-      "name": "nextjs-public-env-vars",
-      "description": "NEXT_PUBLIC_* are inlined into the bundle at build time — never use for secrets or per-environment values.",
-      "path": "plugins/frontend/skills/rule-nextjs-public-env-vars/SKILL.md"
-    },
-    {
-      "name": "nextjs-server-components",
-      "description": "Default to React Server Components; use 'use client' only at leaf interactive nodes",
-      "path": "plugins/frontend/skills/rule-nextjs-server-components/SKILL.md"
-    },
-    {
-      "name": "nextjs-server-only-boundary",
-      "description": "Default to Server Components and put 'use client' only on the smallest interactive leaf; guard secret-bearing server modules with import 'server-only'",
-      "path": "plugins/frontend/skills/rule-nextjs-server-only-boundary/SKILL.md"
     },
     {
       "name": "git-move",
@@ -264,24 +174,9 @@
       "path": "plugins/frontend/skills/config-echo/SKILL.md"
     },
     {
-      "name": "new-skeletor-hook",
-      "description": "Scaffold a skeletor use* animation hook — ref-stable via useRef(builder).current, built on RN Animated (never Reanimated), typed from Animation.ts. Use when adding a hook to the skeletor library.",
-      "path": "plugins/frontend/skills/new-skeletor-hook/SKILL.md"
-    },
-    {
-      "name": "new-skeletor-primitive",
-      "description": "Scaffold a skeletor primitive (Block/Text-shaped) — own folder, typed style-prop intersection, extract + memoizeStyle, displayName, index.ts barrel. Use when adding a skeletor component.",
-      "path": "plugins/frontend/skills/new-skeletor-primitive/SKILL.md"
-    },
-    {
       "name": "session-retrospective",
       "description": "Audits a Claude Code session — deterministic jq analysis of token spend and tool usage, then a judged retrospective in .claude/retrospectives/. Use after a task or when a session felt expensive.",
       "path": "plugins/frontend/skills/session-retrospective/SKILL.md"
-    },
-    {
-      "name": "react-patterns",
-      "description": "Apply React composition, co-location, hook extraction, and state-placement patterns when writing or reviewing components, hooks, or state. Fixes prop drilling and logic tangled in JSX.",
-      "path": "plugins/frontend/skills/react-patterns/SKILL.md"
     },
     {
       "name": "pr-review-loop",
@@ -289,49 +184,14 @@
       "path": "plugins/frontend/skills/pr-review-loop/SKILL.md"
     },
     {
-      "name": "payload-migrations",
-      "description": "",
-      "path": "plugins/frontend/skills/payload-migrations/SKILL.md"
-    },
-    {
-      "name": "payload-cache-revalidation",
-      "description": "Standardizes Next.js + Payload cache revalidation — a cacheTags source of truth, per-locale vs locale-agnostic tags, hooks per cached collection. Use when editing unstable_cache or revalidation hooks.",
-      "path": "plugins/frontend/skills/payload-cache-revalidation/SKILL.md"
-    },
-    {
-      "name": "payload-blocks",
-      "description": "",
-      "path": "plugins/frontend/skills/payload-blocks/SKILL.md"
-    },
-    {
       "name": "patterns",
       "description": "Finds and reuses an existing codebase pattern instead of inventing new structure. Use when adding files or abstractions, reviewing folder structure, naming, or module boundaries, or refactoring.",
       "path": "plugins/frontend/skills/patterns/SKILL.md"
     },
     {
-      "name": "orval-openapi",
-      "description": "",
-      "path": "plugins/frontend/skills/orval-openapi/SKILL.md"
-    },
-    {
-      "name": "nextjs-caching",
-      "description": "",
-      "path": "plugins/frontend/skills/nextjs-caching/SKILL.md"
-    },
-    {
-      "name": "integration-safety",
-      "description": "",
-      "path": "plugins/frontend/skills/integration-safety/SKILL.md"
-    },
-    {
       "name": "docs-upkeep",
       "description": "Updates affected docs in the same task as code or workflow changes — README, API docs, CLI --help, config, wiki. Use when renaming endpoints, adding flags/config, or fixing stale references.",
       "path": "plugins/frontend/skills/docs-upkeep/SKILL.md"
-    },
-    {
-      "name": "design-system",
-      "description": "",
-      "path": "plugins/frontend/skills/design-system/SKILL.md"
     },
     {
       "name": "create-skill",
@@ -366,11 +226,6 @@
       "path": "plugins/frontend/agents/test-specialist.md"
     },
     {
-      "name": "skeletor-specialist",
-      "description": "",
-      "path": "plugins/frontend/agents/skeletor-specialist.md"
-    },
-    {
       "name": "session-auditor",
       "description": "Audits a Claude Code session transcript for token spend and harness-usage quality — wasted calls, missed delegation, cache misses — and writes a graded retrospective. Use after a session ends.",
       "path": "plugins/frontend/agents/session-auditor.md"
@@ -379,11 +234,6 @@
       "name": "pr-reviewer",
       "description": "Headless PR reviewer — fetches PR context via gh, reviews intent-first with Conventional Comments findings, posts one comment-only review. Never approves. For in-session review use code-reviewer.",
       "path": "plugins/frontend/agents/pr-reviewer.md"
-    },
-    {
-      "name": "payload-specialist",
-      "description": "Builds and reviews Payload CMS schemas — collections, globals, blocks, fields, hooks, access, Lexical, plugins, migrations, payload-types. Use proactively for payload.config work. Not generic APIs.",
-      "path": "plugins/frontend/agents/payload-specialist.md"
     },
     {
       "name": "frontend-specialist",

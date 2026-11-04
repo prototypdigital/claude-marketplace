@@ -1,6 +1,6 @@
 ---
 name: skeletor-specialist
-description: @prototyp/skeletor expert — consumer API (Block/Text/Screen, provider, animation hooks) and library internals (style-prop pipeline, memoizeStyle, Biome, release-please). Use for any skeletor work.
+description: "@prototyp/skeletor expert — consumer API (Block/Text/Screen, provider, animation hooks) and library internals (style-prop pipeline, memoizeStyle, Biome, release-please). Use for any skeletor work."
 tools: ["Read", "Grep", "Glob", "Edit", "Write", "Bash"]
 ---
 
