@@ -39,6 +39,11 @@
       "path": "plugins/react/skills/rule-llm-package-hallucination/SKILL.md"
     },
     {
+      "name": "lockfile-discipline",
+      "description": "Commit one lockfile, install from it frozen in CI and Docker (npm ci, --frozen-lockfile, --immutable), and verify npm registry signatures.",
+      "path": "plugins/react/skills/rule-lockfile-discipline/SKILL.md"
+    },
+    {
       "name": "never-read-env",
       "description": "Never read .env files directly in code.",
       "path": "plugins/react/skills/rule-never-read-env/SKILL.md"
