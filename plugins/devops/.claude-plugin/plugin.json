@@ -49,6 +49,31 @@
       "path": "plugins/devops/skills/rule-pre-commit-checks/SKILL.md"
     },
     {
+      "name": "chart-integrity",
+      "description": "One claim per chart, annotate the threshold, keep the caveat on the chart, never chart a misleading-but-true metric.",
+      "path": "plugins/devops/skills/rule-chart-integrity/SKILL.md"
+    },
+    {
+      "name": "correction-log",
+      "description": "Log corrections in the artifact instead of silently fixing them.",
+      "path": "plugins/devops/skills/rule-correction-log/SKILL.md"
+    },
+    {
+      "name": "evidence-citation",
+      "description": "Every number in a deliverable carries its source and its basis; own data is never dressed as research.",
+      "path": "plugins/devops/skills/rule-evidence-citation/SKILL.md"
+    },
+    {
+      "name": "measure-dont-proxy",
+      "description": "Never report a proxy metric when the real measurement is available; run the thing.",
+      "path": "plugins/devops/skills/rule-measure-dont-proxy/SKILL.md"
+    },
+    {
+      "name": "no-hand-typed-figures",
+      "description": "Generate every figure in a deliverable from source data; never type a number in by hand.",
+      "path": "plugins/devops/skills/rule-no-hand-typed-figures/SKILL.md"
+    },
+    {
       "name": "docs-parity",
       "description": "Keep documentation in sync with every user-facing change.",
       "path": "plugins/devops/skills/rule-docs-parity/SKILL.md"
@@ -127,6 +152,11 @@
       "name": "workspace-hygiene",
       "description": "Audits the workspace before a commit or PR — confirms diff scope, flags stray console.log/debugger/scratch files and secrets, checks atomic commits. Use after a refactor or before opening a PR.",
       "path": "plugins/devops/skills/workspace-hygiene/SKILL.md"
+    },
+    {
+      "name": "talk-deck",
+      "description": "Builds an evidence-backed conference deck from research data — Slidev scaffold, generated figures, demo risk triage, PDF fallback. Use when turning measured findings into a talk.",
+      "path": "plugins/devops/skills/talk-deck/SKILL.md"
     },
     {
       "name": "config-echo",
