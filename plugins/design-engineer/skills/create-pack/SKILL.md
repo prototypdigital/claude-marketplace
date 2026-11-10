@@ -34,7 +34,7 @@ Use this skill when asked to create a new bluetemberg pack (a publishable npm pa
 
 5. The agent MUST author at least one real content file using the matching meta-skill conventions — `create-rule` for rules, `create-agent` for agents, `create-skill` for skills. An empty pack must not be created.
 
-6. The agent MUST register the pack in `bluetemberg.config.json` by adding `./packages/bluetemberg-{kind}-{topic}` to the `extends` array, keeping the array alphabetically sorted. Validation fails if a package exists but is not listed.
+6. The agent MUST register the pack in `bluetemberg.config.json` by adding `{ "path": "./packages/bluetemberg-{kind}-{topic}", "platforms": ["claude-marketplace"] }` to the `extends` array, next to packs of the same kind. The scoped entry publishes the pack to the marketplace without syncing it into the packs repo's own `.claude/`. Use a plain path string only for pack-authoring tooling the repo should dogfood. Validation fails if a package exists but is not listed, or if its entry leaves out `claude-marketplace`.
 
 7. The agent MUST run, in order, and not report success until all pass:
    - `npm run generate:catalog` — regenerate `catalog.json` and the wiki catalog table (run this BEFORE validate; the validator fails if the catalog is stale)
