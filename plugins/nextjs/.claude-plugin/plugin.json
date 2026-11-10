@@ -409,6 +409,16 @@
       "path": "plugins/nextjs/skills/workspace-hygiene/SKILL.md"
     },
     {
+      "name": "lighthouse-ab",
+      "description": "Interleaved Lighthouse A/B of two builds or URLs with the controls that keep scores comparable; reports run list, min and median. Use before claiming a change moved a Lighthouse or Web Vitals score.",
+      "path": "plugins/nextjs/skills/lighthouse-ab/SKILL.md"
+    },
+    {
+      "name": "perf-attribution",
+      "description": "Attributes a low Lighthouse score to its cause before any fix — LCP element, pre-LCP request set, main-thread and layout-shift sources. Use when a page scores low and the cause is unclear.",
+      "path": "plugins/nextjs/skills/perf-attribution/SKILL.md"
+    },
+    {
       "name": "visual-direction",
       "description": "Locks a visual direction before a UI build by exploring 3 options, picking one, writing a banned-moves list + Design System Document. Use when UI keeps coming out generic or before a handoff.",
       "path": "plugins/nextjs/skills/visual-direction/SKILL.md"

@@ -214,6 +214,16 @@
       "path": "plugins/fullstack/skills/workspace-hygiene/SKILL.md"
     },
     {
+      "name": "lighthouse-ab",
+      "description": "Interleaved Lighthouse A/B of two builds or URLs with the controls that keep scores comparable; reports run list, min and median. Use before claiming a change moved a Lighthouse or Web Vitals score.",
+      "path": "plugins/fullstack/skills/lighthouse-ab/SKILL.md"
+    },
+    {
+      "name": "perf-attribution",
+      "description": "Attributes a low Lighthouse score to its cause before any fix — LCP element, pre-LCP request set, main-thread and layout-shift sources. Use when a page scores low and the cause is unclear.",
+      "path": "plugins/fullstack/skills/perf-attribution/SKILL.md"
+    },
+    {
       "name": "talk-deck",
       "description": "Builds an evidence-backed conference deck from research data — Slidev scaffold, generated figures, demo risk triage, PDF fallback. Use when turning measured findings into a talk.",
       "path": "plugins/fullstack/skills/talk-deck/SKILL.md"
